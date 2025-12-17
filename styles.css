@@ -1,1 +1,87 @@
+/* The Carpet Cleaning Company styles */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #0a1020;
+  color: #e9eefc;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #78a82c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.topbar {
+  background: #0f1a33;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.topbar .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pill {
+  background: #78a82c;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin-right: 5px;
+}
+
+.header {
+  background: #0a1020;
+  padding: 20px 0;
+}
+
+.hero {
+  background: #0f1a33;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero p.hero-lead {
+  font-size: 1.2em;
+  color: #e9eefc;
+}
+
+.btn {
+  background: #78a82c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 2px solid #78a82c;
+  color: #78a82c;
+}
+
+.footer {
+  background: #0f1a33;
+  color: #e9eefc;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Add any other styles you need for other sections */
+
 
