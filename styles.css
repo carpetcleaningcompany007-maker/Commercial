@@ -1,87 +1,89 @@
-/* The Carpet Cleaning Company styles */
-body {
-  font-family: 'Lato', sans-serif;
-  background-color: #0a1020;
-  color: #e9eefc;
-  margin: 0;
-  padding: 0;
+:root{
+  --bg:#0a1020;
+  --bg2:#0f1a33;
+  --text:#e9eefc;
+  --muted:rgba(233,238,252,.78);
+  --line:rgba(255,255,255,.12);
+  --accent:#78a82c;
 }
 
-a {
-  color: #78a82c;
-  text-decoration: none;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+
+body{
+  font-family:Lato,Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  color:var(--text);
 }
 
-a:hover {
-  text-decoration: underline;
+.wrap{max-width:1100px;margin:auto;padding:0 18px}
+
+.topbar{
+  border-bottom:1px solid var(--line);
+  background:rgba(0,0,0,.4);
 }
 
-.topbar {
-  background: #0f1a33;
-  color: #fff;
-  padding: 10px 0;
+.topbar .wrap{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
 }
 
-.topbar .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+.pill{
+  border:1px solid var(--line);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
 }
 
-.pill {
-  background: #78a82c;
-  padding: 5px 10px;
-  border-radius: 15px;
-  margin-right: 5px;
+.header{
+  border-bottom:1px solid var(--line);
+  padding:14px 0;
 }
 
-.header {
-  background: #0a1020;
-  padding: 20px 0;
+.brand{display:flex;gap:12px;align-items:center}
+.brand-mark{
+  background:var(--accent);
+  color:#000;
+  font-weight:900;
+  padding:10px;
+  border-radius:12px;
 }
 
-.hero {
-  background: #0f1a33;
-  padding: 50px 0;
-  text-align: center;
+.hero{
+  padding:100px 0;
+  text-align:left;
 }
 
-.hero h1 {
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 900;
-  color: #fff;
-  margin-bottom: 20px;
+.hero h1{
+  font-family:"Libre Franklin";
+  font-size:64px;
+  line-height:.95;
 }
 
-.hero p.hero-lead {
-  font-size: 1.2em;
-  color: #e9eefc;
+.hero-lead{
+  max-width:600px;
+  color:var(--muted);
+  font-size:18px;
 }
 
-.btn {
-  background: #78a82c;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.band{padding:60px 0}
+.band-dark{border-top:1px solid var(--line)}
+
+.btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:14px 20px;
+  background:var(--accent);
+  color:#000;
+  font-weight:900;
+  border-radius:12px;
+  text-decoration:none;
 }
 
-.btn-ghost {
-  background: transparent;
-  border: 2px solid #78a82c;
-  color: #78a82c;
+.footer{
+  border-top:1px solid var(--line);
+  padding:30px 0;
+  text-align:center;
+  color:var(--muted);
 }
-
-.footer {
-  background: #0f1a33;
-  color: #e9eefc;
-  padding: 20px 0;
-  text-align: center;
-}
-
-/* Add any other styles you need for other sections */
-
-
