@@ -28,7 +28,7 @@ section{width:100%}
 /* HERO */
 .hero{position:relative;height:90vh;color:#fff;overflow:hidden}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6)}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.65)}
 .hero-content{position:relative;z-index:2;max-width:900px;padding:120px 24px}
 .hero h1{font-size:clamp(42px,6vw,80px);line-height:1.05}
 .hero p{margin-top:20px;font-size:22px;color:#e6e9f4}
@@ -44,38 +44,40 @@ section{width:100%}
 .grid{display:grid;gap:30px}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{background:var(--dark2);border-radius:14px;overflow:hidden;transform:translateY(20px);opacity:0;transition:.6s}
-.card img{width:100%;height:220px;object-fit:cover}
-.card .pad{padding:26px}
+.card img{width:100%;height:240px;object-fit:cover}
+.card .pad{padding:28px}
 .card h3{margin-bottom:10px}
 .card p{color:var(--muted)}
+.show{transform:none;opacity:1}
+
+/* VIDEO SECTION */
+.video-section{background:#000;color:#fff}
+.video-frame{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.video-frame video{width:100%;display:block}
 
 /* STATS */
 .stats{background:#f4f6fb}
 .stat{background:#fff;border-radius:16px;padding:40px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.06)}
 .stat span{font-size:52px;font-weight:900;color:var(--accent)}
 
-/* BEFORE AFTER */
-.slider{position:relative;overflow:hidden;border-radius:16px}
-.slider img{width:100%;display:block}
-.slider input{position:absolute;inset:0;width:100%;opacity:0;cursor:ew-resize}
-.after{position:absolute;top:0;left:0;height:100%;width:50%;overflow:hidden}
-.after img{width:100%}
-
-/* ESG */
-.esg{background:#f8fafc}
-.badges{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px}
-.badge{background:#fff;padding:20px 26px;border-radius:30px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.05)}
-
-/* LOGOS */
-.logos{display:flex;gap:50px;overflow-x:auto;align-items:center}
-.logos img{height:60px;opacity:.7}
+/* FORM */
+.form-section{background:linear-gradient(180deg,#0b1324,#121b33);color:#fff}
+.form-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px}
+.form-box{background:#fff;color:#111;border-radius:20px;padding:50px;box-shadow:0 40px 80px rgba(0,0,0,.35)}
+label{display:block;font-weight:700;margin-top:22px}
+input,textarea{width:100%;margin-top:8px;padding:14px;border-radius:10px;border:1px solid #ccc;font-size:16px}
+textarea{resize:none;height:120px}
+button{margin-top:30px;padding:16px 36px;background:var(--accent);border:none;border-radius:40px;font-size:18px;font-weight:900;cursor:pointer}
 
 /* FOOTER */
 footer{background:var(--dark2);color:#fff}
 footer p{color:var(--muted)}
 
-/* ANIMATION */
-.show{transform:none;opacity:1}
+/* MOBILE */
+@media(max-width:900px){
+.form-grid{grid-template-columns:1fr}
+.hero-content{padding:80px 24px}
+}
 </style>
 </head>
 
@@ -88,14 +90,14 @@ footer p{color:var(--muted)}
   <div class="hero-content">
     <h1>Commercial carpet cleaning<br>powered by FibreLife</h1>
     <p>Low-moisture technology engineered for offices, conference centres and hotels where uptime matters.</p>
-    <a class="btn" href="#contact">Request a proposal</a>
+    <a class="btn" href="#enquiry">Request a proposal</a>
   </div>
 </section>
 
 <section class="wrap">
   <div class="section-head">
     <h2>Commercial environments we specialise in</h2>
-    <p>FibreLife is designed exclusively for professional, carpeted spaces with high footfall.</p>
+    <p>FibreLife is designed exclusively for professional carpeted spaces with heavy footfall.</p>
   </div>
 
   <div class="grid grid-3">
@@ -119,8 +121,23 @@ footer p{color:var(--muted)}
       <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg">
       <div class="pad">
         <h3>Hotels & venues</h3>
-        <p>Corridors, lounges and guest areas with no downtime.</p>
+        <p>Guest areas, corridors and lounges with no downtime.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>See FibreLife in action</h2>
+      <p>Purpose-built for commercial environments where appearance and speed matter.</p>
+    </div>
+
+    <div class="video-frame">
+      <video controls preload="metadata">
+        <source src="assets/work.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
@@ -128,65 +145,62 @@ footer p{color:var(--muted)}
 <section class="stats">
   <div class="wrap grid grid-3">
     <div class="stat"><span data-count="120">0</span><p>Commercial sites</p></div>
-    <div class="stat"><span data-count="40">0</span><p>Percent lifespan gain</p></div>
-    <div class="stat"><span data-count="24">0</span><p>Hour disruption avoided</p></div>
+    <div class="stat"><span data-count="40">0</span><p>Extended carpet lifespan %</p></div>
+    <div class="stat"><span data-count="24">0</span><p>Hours downtime avoided</p></div>
   </div>
 </section>
 
-<section class="wrap">
-  <div class="section-head">
-    <h2>Before & after</h2>
-    <p>Embedded soil removal without saturation.</p>
-  </div>
+<section id="enquiry" class="form-section">
+  <div class="wrap form-grid">
 
-  <div class="slider">
-    <img src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg">
-    <div class="after" id="after">
-      <img src="https://images.pexels.com/photos/3965546/pexels-photo-3965546.jpeg">
+    <div>
+      <h2>Request a FibreLife proposal</h2>
+      <p style="margin-top:20px;color:#cfd6ee;max-width:520px">
+        Tell us about your building, usage levels and operational requirements.
+        We will design a tailored FibreLife maintenance plan for your site.
+      </p>
+      <p style="margin-top:30px;font-size:20px">
+        Call directly: <strong>07802 563213</strong>
+      </p>
     </div>
-    <input type="range" min="0" max="100" value="50" oninput="after.style.width=this.value+'%'">
+
+    <div class="form-box">
+      <form>
+        <label>Full name</label>
+        <input type="text" placeholder="Your name" required>
+
+        <label>Email address</label>
+        <input type="email" placeholder="you@example.com" required>
+
+        <label>Organisation / building</label>
+        <input type="text" placeholder="Office, hotel, venue">
+
+        <label>Project details</label>
+        <textarea placeholder="Size, carpet type, footfall, location"></textarea>
+
+        <button type="submit">Request proposal</button>
+      </form>
+    </div>
+
   </div>
 </section>
 
-<section class="esg">
+<footer>
   <div class="wrap">
-    <div class="section-head">
-      <h2>ESG & compliance ready</h2>
-      <p>Suitable for NHS, councils and facilities management frameworks.</p>
-    </div>
-
-    <div class="badges">
-      <div class="badge">Low moisture usage</div>
-      <div class="badge">Reduced chemical runoff</div>
-      <div class="badge">Improved indoor air quality</div>
-      <div class="badge">Asset life extension</div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="logos">
-    <img src="https://dummyimage.com/200x80/ccc/000&text=Client">
-    <img src="https://dummyimage.com/200x80/ccc/000&text=Client">
-    <img src="https://dummyimage.com/200x80/ccc/000&text=Client">
-  </div>
-</section>
-
-<footer id="contact">
-  <div class="wrap">
-    <h3>Request a FibreLife proposal</h3>
-    <p>Call 07802 563213 or visit the main site.</p>
+    <h3>The Carpet Cleaning Company</h3>
+    <p>Commercial carpet cleaning specialists using FibreLife Technology</p>
   </div>
 </footer>
 
 <script>
-/* counters */
 document.querySelectorAll('[data-count]').forEach(el=>{
  let t=+el.dataset.count,n=0,s=t/60;
- let i=setInterval(()=>{n+=s;if(n>=t){el.textContent=t;clearInterval(i)}else el.textContent=Math.floor(n)},20)
+ let i=setInterval(()=>{
+  n+=s;
+  if(n>=t){el.textContent=t;clearInterval(i)}
+  else el.textContent=Math.floor(n)
+ },20)
 });
-
-/* scroll reveal */
 const obs=new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add('show')),{threshold:.2});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
