@@ -503,3 +503,46 @@ textarea:focus {
   color: rgba(255,255,255,0.85);
   line-height: 1.6;
 }
+/* ===== FIBRELIFE COMPARISON ===== */
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.compare-box {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.compare-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.compare-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.compare-box li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.6rem;
+  position: relative;
+}
+
+.compare-box li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.compare-box.highlight {
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
+  border: 2px solid var(--accent);
+}
