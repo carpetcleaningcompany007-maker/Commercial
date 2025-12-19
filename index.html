@@ -1,237 +1,303 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Commercial Carpet Cleaning | FibreLife Technology</title>
+<title>FibreLife Commercial Carpet Cleaning</title>
+<meta name="description" content="Commercial carpet cleaning using FibreLife Technology for offices, hotels and large venues.">
 
-  <meta name="description" content="Commercial carpet cleaning specialists using FibreLife Technology for offices, hotels and commercial venues across Shropshire, Herefordshire and Worcestershire." />
-  <meta name="theme-color" content="#0b1324" />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+:root {
+  --bg-dark:#0b1324;
+  --bg-mid:#141b2f;
+  --accent:#78a82c;
+  --text:#ffffff;
+  --muted:#b5bccf;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+* { box-sizing:border-box; margin:0; padding:0; }
+
+body {
+  font-family:Lato, sans-serif;
+  background:#fff;
+  color:#111;
+}
+
+h1,h2,h3,h4 {
+  font-family:"Libre Franklin", sans-serif;
+}
+
+section {
+  width:100%;
+}
+
+.wrap {
+  max-width:1200px;
+  margin:auto;
+  padding:80px 24px;
+}
+
+/* HERO */
+.hero {
+  position:relative;
+  height:90vh;
+  color:#fff;
+  overflow:hidden;
+}
+
+.hero video {
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  padding:120px 24px;
+}
+
+.hero h1 {
+  font-size:clamp(40px,6vw,78px);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.hero p {
+  font-size:22px;
+  max-width:700px;
+  color:#e6e9f4;
+}
+
+.hero .btn {
+  display:inline-block;
+  margin-top:30px;
+  padding:16px 36px;
+  background:var(--accent);
+  color:#000;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:30px;
+}
+
+/* SECTION HEAD */
+.section-head {
+  margin-bottom:50px;
+}
+
+.section-head h2 {
+  font-size:44px;
+}
+
+.section-head p {
+  color:#666;
+  max-width:700px;
+  margin-top:10px;
+}
+
+/* SECTORS */
+.sectors {
+  background:var(--bg-dark);
+  color:#fff;
+}
+
+.sector-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.sector {
+  background:#111a33;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.sector img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.sector .content {
+  padding:24px;
+}
+
+.sector h3 {
+  margin-bottom:10px;
+}
+
+.sector p {
+  color:#cfd6ee;
+}
+
+/* STATS */
+.stats {
+  background:#f4f6fb;
+}
+
+.stat-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  text-align:center;
+}
+
+.stat {
+  background:#fff;
+  padding:40px 20px;
+  border-radius:14px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.05);
+}
+
+.stat span {
+  font-size:52px;
+  font-weight:900;
+  color:var(--accent);
+  display:block;
+}
+
+.stat p {
+  margin-top:10px;
+  font-weight:600;
+}
+
+/* LOGOS */
+.logos {
+  background:#fff;
+}
+
+.logo-row {
+  display:flex;
+  gap:50px;
+  align-items:center;
+  overflow-x:auto;
+  padding:20px 0;
+}
+
+.logo-row img {
+  height:60px;
+  opacity:.7;
+}
+
+/* FOOTER */
+footer {
+  background:var(--bg-mid);
+  color:#fff;
+  padding:60px 24px;
+}
+
+footer p {
+  color:#cfd6ee;
+}
+</style>
 </head>
 
-<body id="top">
-
-<div class="topbar">
-  <div class="wrap">
-    <div class="topbar-left">
-      <span class="pill">Commercial specialists</span>
-      <span class="pill">FibreLife Technology</span>
-      <span class="pill">Fully insured</span>
-    </div>
-    <div class="topbar-right">
-      <a class="toplink" href="tel:07802563213">Call 07802 563213</a>
-      <a class="toplink" href="#quote">Request proposal</a>
-    </div>
-  </div>
-</div>
-
-<header class="header">
-  <div class="wrap header-inner">
-    <a class="brand" href="#top">
-      <div class="brand-mark">TCCC</div>
-      <div class="brand-text">
-        <div class="brand-name">The Carpet Cleaning Company</div>
-        <div class="brand-sub">Commercial Carpet Specialists</div>
-      </div>
-    </a>
-
-    <nav class="nav">
-      <a href="#fibrelife">FibreLife</a>
-      <a href="#sectors">Sectors</a>
-      <a href="#work">Process</a>
-      <a href="#quote" class="btn btn-sm">Enquire</a>
-    </nav>
-  </div>
-</header>
-
-<main>
+<body>
 
 <section class="hero">
-  <div class="hero-media">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="assets/hero.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-  </div>
+  <video autoplay muted loop playsinline>
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
 
-  <div class="wrap hero-content">
-    <h1>
-      Commercial carpet cleaning<br>
-      powered by FibreLife Technology
-    </h1>
-
-    <p class="hero-lead">
-      A specialist low moisture deep cleaning system engineered for offices, hotels
-      and commercial venues where appearance, uptime and longevity matter.
+  <div class="hero-content">
+    <h1>Commercial carpet cleaning<br>powered by FibreLife</h1>
+    <p>
+      A specialist low-moisture system engineered for offices, hotels and
+      large commercial environments where uptime and appearance matter.
     </p>
+    <a class="btn" href="#contact">Request a proposal</a>
+  </div>
+</section>
 
-    <div class="hero-cta">
-      <a class="btn" href="#quote">Request a commercial proposal</a>
-      <a class="btn btn-ghost" href="#fibrelife">Understand FibreLife</a>
+<section class="wrap">
+  <div class="section-head">
+    <h2>FibreLife commercial environments</h2>
+    <p>Designed exclusively for professional, high-traffic carpeted spaces.</p>
+  </div>
+
+  <div class="sector-grid">
+    <div class="sector">
+      <img src="https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg">
+      <div class="content">
+        <h3>Offices</h3>
+        <p>Carpet tile and broadloom maintenance without disrupting staff or workflow.</p>
+      </div>
+    </div>
+
+    <div class="sector">
+      <img src="https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg">
+      <div class="content">
+        <h3>Conference spaces</h3>
+        <p>Large presentation areas cleaned and ready for immediate use.</p>
+      </div>
+    </div>
+
+    <div class="sector">
+      <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg">
+      <div class="content">
+        <h3>Hotels & venues</h3>
+        <p>Corridors, lounges and guest areas maintained without downtime.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="fibrelife" class="band band-light">
-  <div class="wrap two-col">
-    <div>
-      <h2>FibreLife Technology</h2>
-      <p class="subhead">
-        A commercial carpet maintenance system designed to outperform traditional extraction.
-      </p>
-    </div>
-
-    <div>
-      <p>
-        FibreLife combines specialist chemistry, mechanical agitation and encapsulation
-        to remove embedded soil while avoiding overwetting and extended drying times.
-      </p>
-      <p>
-        The result is consistent appearance standards, reduced disruption and extended
-        carpet lifespan across commercial environments.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="sectors" class="band band-dark">
+<section class="stats">
   <div class="wrap">
-
     <div class="section-head">
-      <h3 class="kicker">commercial environments</h3>
-      <p>Typical carpeted spaces maintained using FibreLife Technology.</p>
+      <h2>Key performance stats</h2>
     </div>
 
-    <div class="commercial-cards">
-
-      <!-- OFFICE WITH CARPET -->
-      <div class="commercial-card">
-        <img src="https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Carpeted office workspace">
-        <div class="card-body">
-          <h4>Office environments</h4>
-          <p>
-            Carpet tiled offices with constant foot traffic and chair movement,
-            maintained without disrupting daily operations.
-          </p>
-        </div>
-      </div>
-
-      <!-- CONFERENCE ROOM WITH CARPET -->
-      <div class="commercial-card">
-        <img src="https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Large carpeted conference room">
-        <div class="card-body">
-          <h4>Conference and meeting rooms</h4>
-          <p>
-            Large carpeted presentation spaces where appearance,
-            hygiene and rapid drying are essential.
-          </p>
-        </div>
-      </div>
-
-      <!-- HOTEL WITH CARPET -->
-      <div class="commercial-card">
-        <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&h=900" alt="Hotel corridor with carpet">
-        <div class="card-body">
-          <h4>Hotels and venues</h4>
-          <p>
-            Carpeted corridors, lounges and guest areas maintained
-            without extended downtime or guest disruption.
-          </p>
-        </div>
-      </div>
-
+    <div class="stat-grid">
+      <div class="stat"><span data-count="120">0</span><p>Commercial sites maintained</p></div>
+      <div class="stat"><span data-count="24">0</span><p>Hour drying disruption avoided</p></div>
+      <div class="stat"><span data-count="40">0</span><p>Percent carpet lifespan extended</p></div>
     </div>
-
   </div>
 </section>
 
-<section id="work" class="band band-light">
-  <div class="wrap split">
-
-    <div class="media">
-      <div class="media-frame">
-        <video controls preload="metadata">
-          <source src="assets/work.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-
-    <div class="copy">
-      <h3>The FibreLife commercial process</h3>
-      <ol class="steps">
-        <li><strong>Site assessment</strong> of traffic patterns and fibre type.</li>
-        <li><strong>Calibrated application</strong> of FibreLife solution.</li>
-        <li><strong>Mechanical agitation</strong> to lift and encapsulate soil.</li>
-        <li><strong>Rapid drying</strong> allowing immediate return to service.</li>
-        <li><strong>Ongoing maintenance planning</strong> to protect your investment.</li>
-      </ol>
-    </div>
-
+<section class="logos wrap">
+  <div class="logo-row">
+    <img src="https://dummyimage.com/200x80/ccc/000&text=Client+Logo">
+    <img src="https://dummyimage.com/200x80/ccc/000&text=Client+Logo">
+    <img src="https://dummyimage.com/200x80/ccc/000&text=Client+Logo">
+    <img src="https://dummyimage.com/200x80/ccc/000&text=Client+Logo">
   </div>
 </section>
 
-<section id="quote" class="band band-dark">
-  <div class="wrap quote">
-
-    <div>
-      <h3>Request a commercial proposal</h3>
-      <p>
-        Tell us about your premises, usage levels and operational requirements.
-        We will design a FibreLife maintenance plan tailored to your site.
-      </p>
-
-      <div class="contact">
-        <a class="btn" href="tel:07802563213">Call 07802 563213</a>
-        <a class="btn btn-ghost" href="https://www.thecarpetcleaningcrew.co.uk" target="_blank" rel="noopener">Visit website</a>
-      </div>
-    </div>
-
-    <form class="form">
-      <label>
-        Name
-        <input required type="text" placeholder="Your name" />
-      </label>
-      <label>
-        Email
-        <input required type="email" placeholder="you@example.com" />
-      </label>
-      <label>
-        Building details
-        <textarea required rows="4" placeholder="Premises type, size, footfall"></textarea>
-      </label>
-      <button class="btn" type="submit">Request proposal</button>
-    </form>
-
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="wrap footer-grid">
-    <div>
-      <div class="footer-brand">The Carpet Cleaning Company</div>
-      <p class="muted">Commercial carpet cleaning specialists using FibreLife Technology.</p>
-    </div>
-
-    <div>
-      <div class="footer-title">Contact</div>
-      <p class="muted">07802 563213</p>
-      <p class="muted">thecarpetcleaningcrew.co.uk</p>
-    </div>
-  </div>
-
-  <div class="wrap footer-bottom">
-    <span>© The Carpet Cleaning Company</span>
+<footer id="contact">
+  <div class="wrap">
+    <h3>Request a FibreLife proposal</h3>
+    <p>Call 07802 563213 or email via the main site.</p>
   </div>
 </footer>
 
-</main>
+<script>
+document.querySelectorAll('[data-count]').forEach(el=>{
+  let target=+el.dataset.count;
+  let n=0;
+  let step=target/60;
+  let i=setInterval(()=>{
+    n+=step;
+    if(n>=target){el.textContent=target;clearInterval(i);}
+    else el.textContent=Math.floor(n);
+  },20);
+});
+</script>
+
 </body>
 </html>
