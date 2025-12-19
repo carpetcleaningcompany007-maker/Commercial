@@ -577,4 +577,38 @@ input, textarea {
     padding: 1.5rem;
   }
 }
+/* ===== COMMERCIAL CARDS ===== */
+
+.commercial-cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.commercial-card {
+  background: rgba(255,255,255,0.06);
+  padding: 2rem;
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.commercial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 4px 4px 0 0;
+}
+
+.commercial-card h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.commercial-card p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
 
