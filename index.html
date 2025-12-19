@@ -6,7 +6,7 @@
 
 <title>FibreLife Commercial Carpet Maintenance | The Carpet Cleaning Company</title>
 
-<meta name="description" content="Professional low-moisture commercial carpet maintenance for offices, hotels and large venues. Planned programmes, rapid drying and asset protection.">
+<meta name="description" content="Low-moisture commercial carpet maintenance for offices, hotels and large venues. FibreLife Technology delivers rapid drying, minimal disruption and asset protection.">
 <meta name="theme-color" content="#0a1020">
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;900&family=Lato:wght@400;600&display=swap" rel="stylesheet">
@@ -15,11 +15,11 @@
 :root{
   --navy:#0a1020;
   --navy-soft:#121a33;
-  --ink:#111;
-  --muted:#5f6b8a;
+  --accent:#1f6fff;
   --bg:#ffffff;
   --panel:#f4f6fb;
-  --accent:#1f6fff;
+  --text:#111;
+  --muted:#5f6b8a;
   --radius:8px;
 }
 
@@ -27,8 +27,8 @@
 
 body{
   font-family:Lato,system-ui,sans-serif;
-  color:var(--ink);
-  background:var(--bg);
+  background:#fff;
+  color:var(--text);
   line-height:1.6;
 }
 
@@ -49,17 +49,17 @@ a{text-decoration:none;color:inherit}
 header{
   position:sticky;
   top:0;
-  z-index:10;
   background:#fff;
   border-bottom:1px solid rgba(0,0,0,.06);
+  z-index:10;
 }
 .header-inner{
   max-width:1200px;
   margin:auto;
   padding:18px 24px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
 .brand{
   font-weight:900;
@@ -69,7 +69,6 @@ nav a{
   font-weight:600;
 }
 .btn{
-  display:inline-block;
   background:var(--accent);
   color:#fff;
   padding:12px 20px;
@@ -79,11 +78,29 @@ nav a{
 
 /* HERO */
 .hero{
-  background:linear-gradient(180deg,rgba(10,16,32,.85),rgba(10,16,32,.95)),
-             url("https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg");
-  background-size:cover;
-  background-position:center;
+  position:relative;
+  height:85vh;
   color:#fff;
+}
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(10,16,32,.45),rgba(10,16,32,.9));
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:auto;
+  padding:160px 24px 0;
 }
 .hero h1{
   font-size:clamp(42px,6vw,64px);
@@ -92,14 +109,12 @@ nav a{
 .hero p{
   margin-top:20px;
   max-width:720px;
+  color:#e2e8ff;
   font-size:18px;
-  color:#e1e6ff;
 }
-.hero-actions{
-  margin-top:36px;
-}
-.hero-actions .btn{
-  margin-right:14px;
+.hero .btn{
+  margin-top:32px;
+  display:inline-block;
 }
 
 /* SECTION HEAD */
@@ -115,20 +130,25 @@ nav a{
   color:var(--muted);
 }
 
-/* PANELS */
-.panel{
-  background:var(--panel);
-}
+/* CARDS WITH IMAGES */
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:26px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
 }
 .card{
   background:#fff;
   border-radius:var(--radius);
-  padding:30px;
-  box-shadow:0 20px 40px rgba(0,0,0,.06);
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.card .pad{
+  padding:26px;
 }
 .card h3{
   margin-bottom:10px;
@@ -138,6 +158,9 @@ nav a{
 }
 
 /* STATS */
+.panel{
+  background:var(--panel);
+}
 .stats{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -145,13 +168,13 @@ nav a{
 }
 .stat{
   background:#fff;
-  border-radius:var(--radius);
   padding:34px;
+  border-radius:var(--radius);
   text-align:center;
 }
 .stat strong{
   display:block;
-  font-size:38px;
+  font-size:36px;
   color:var(--accent);
 }
 
@@ -163,7 +186,7 @@ nav a{
 }
 .step{
   border-left:4px solid var(--accent);
-  padding-left:20px;
+  padding-left:18px;
 }
 .step strong{
   display:block;
@@ -173,8 +196,8 @@ nav a{
 /* FORM */
 .form{
   background:#fff;
-  border-radius:var(--radius);
   padding:40px;
+  border-radius:var(--radius);
   box-shadow:0 30px 60px rgba(0,0,0,.08);
 }
 .form label{
@@ -214,22 +237,23 @@ footer p{
     <div class="brand">The Carpet Cleaning Company</div>
     <nav>
       <a href="#system">FibreLife</a>
-      <a href="#process">Process</a>
       <a href="#contact" class="btn">Request proposal</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="wrap">
+  <video autoplay muted loop playsinline>
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
     <h1>Commercial carpet maintenance for professional environments</h1>
     <p>
       FibreLife is a low-moisture carpet maintenance system designed for offices,
-      hotels and large venues where drying time, disruption and appearance matter.
+      hotels and large venues where drying time and disruption must be kept to a minimum.
     </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn">Request a proposal</a>
-    </div>
+    <a href="#contact" class="btn">Request a proposal</a>
   </div>
 </section>
 
@@ -237,18 +261,30 @@ footer p{
   <div class="section-head">
     <h2>Where FibreLife is used</h2>
   </div>
+
   <div class="cards">
     <div class="card">
-      <h3>Offices</h3>
-      <p>Carpet tiles and open plan areas maintained without impacting daily operations.</p>
+      <img src="https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg">
+      <div class="pad">
+        <h3>Offices</h3>
+        <p>Carpet tiles and open-plan workspaces maintained without operational downtime.</p>
+      </div>
     </div>
+
     <div class="card">
-      <h3>Hotels & venues</h3>
-      <p>Guest-facing areas kept at presentation standard with rapid drying times.</p>
+      <img src="https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg">
+      <div class="pad">
+        <h3>Conference centres</h3>
+        <p>Large meeting spaces cleaned and returned to service quickly.</p>
+      </div>
     </div>
+
     <div class="card">
-      <h3>Large premises</h3>
-      <p>Conference centres, public buildings and managed facilities.</p>
+      <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg">
+      <div class="pad">
+        <h3>Hotels & venues</h3>
+        <p>Guest-facing areas maintained to consistent presentation standards.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -257,22 +293,24 @@ footer p{
   <div class="section-head">
     <h2>Measured benefits</h2>
   </div>
+
   <div class="stats">
-    <div class="stat"><strong>Low moisture</strong><span>Reduced drying time</span></div>
-    <div class="stat"><strong>Planned care</strong><span>Consistent appearance</span></div>
-    <div class="stat"><strong>Asset focus</strong><span>Extended carpet life</span></div>
+    <div class="stat"><strong>Low moisture</strong>Reduced drying time</div>
+    <div class="stat"><strong>Planned care</strong>Consistent appearance</div>
+    <div class="stat"><strong>Asset focused</strong>Extended carpet life</div>
   </div>
 </section>
 
-<section id="process" class="wrap panel">
+<section id="system" class="wrap panel">
   <div class="section-head">
-    <h2>The commercial process</h2>
+    <h2>The FibreLife process</h2>
   </div>
+
   <div class="process">
-    <div class="step"><strong>Assessment</strong>Usage, fibre and access reviewed.</div>
-    <div class="step"><strong>Application</strong>Controlled low-moisture treatment.</div>
-    <div class="step"><strong>Agitation</strong>Embedded soil encapsulated and lifted.</div>
-    <div class="step"><strong>Return to use</strong>Carpets dry quickly.</div>
+    <div class="step"><strong>Assessment</strong>Usage, fibre and access reviewed</div>
+    <div class="step"><strong>Application</strong>Controlled low-moisture treatment</div>
+    <div class="step"><strong>Agitation</strong>Embedded soil encapsulated and lifted</div>
+    <div class="step"><strong>Return to use</strong>Carpets dry quickly</div>
   </div>
 </section>
 
@@ -283,18 +321,9 @@ footer p{
   </div>
 
   <div class="form">
-    <label>
-      Name
-      <input type="text" required>
-    </label>
-    <label>
-      Email
-      <input type="email" required>
-    </label>
-    <label>
-      Building details
-      <textarea rows="4" placeholder="Type of premises, size, access times"></textarea>
-    </label>
+    <label>Name<input type="text" required></label>
+    <label>Email<input type="email" required></label>
+    <label>Building details<textarea rows="4" placeholder="Type of premises, size, access times"></textarea></label>
     <button class="btn">Submit enquiry</button>
   </div>
 </section>
