@@ -412,3 +412,16 @@ input, textarea {
     display: none;
   }
 }
+/* ===== PREMIUM POLISH LAYER ===== */
+
+/* Global rhythm */
+.band {
+  padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+/* Subtle depth everywhere */
+.card,
+.review,
+.trust-card,
+.stat {
+ 
