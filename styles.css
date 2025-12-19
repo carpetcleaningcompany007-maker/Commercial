@@ -424,4 +424,157 @@ input, textarea {
 .review,
 .trust-card,
 .stat {
- 
+ /* ===== PREMIUM POLISH LAYER ===== */
+
+/* Better section rhythm */
+.band {
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+}
+
+/* Subtle global elevation */
+.card,
+.review,
+.trust-card,
+.stat {
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.06),
+    0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Services cards feel premium */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.06),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Stronger headings hierarchy */
+.section-head p {
+  max-width: 520px;
+  opacity: 0.75;
+}
+
+/* Hero improvements */
+.hero-content {
+  max-width: 680px;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  opacity: 0.95;
+}
+
+/* Trust cards clarity */
+.trust-title {
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.trust-text {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Buttons feel pressable */
+.btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 18px rgba(31,111,255,0.35);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(31,111,255,0.45);
+}
+
+.btn-ghost {
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  background: rgba(31,111,255,0.08);
+}
+
+/* Stats emphasis */
+.stat-num {
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+}
+
+.stat-label {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* Reviews feel softer */
+.review {
+  transition: transform 0.2s ease;
+}
+
+.review:hover {
+  transform: translateY(-4px);
+}
+
+/* Quote section clarity */
+.quote h3 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.form input,
+.form textarea {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 2px var(--accent),
+    0 0 0 4px rgba(31,111,255,0.15);
+}
+
+/* Footer polish */
+.footer {
+  font-size: 0.95rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile tightening */
+@media (max-width: 700px) {
+  .hero-content {
+    padding-top: 4rem;
+  }
+
+  .hero-trust {
+    margin-top: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
