@@ -76,102 +76,59 @@ body{
   color:rgba(255,255,255,.9);
 }
 
-/* FORM */
-.hero-form{
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.28);
-  border-radius:22px;
-  padding:22px;
-  backdrop-filter:blur(10px);
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.hero-form input,
-.hero-form select,
-.hero-form textarea{
-  width:100%;
-  padding:12px 14px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.35);
-  background:rgba(0,0,0,.35);
-  color:#fff;
-  font-size:14px;
-}
-
-.hero-form textarea,
-.hero-form select{
-  grid-column:1 / -1;
-}
-
-.hero-form button{
-  margin-top:14px;
-  width:100%;
-  padding:14px;
+/* CTA */
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
   border-radius:999px;
-  border:2px solid #fff;
-  background:#fff;
+  background:var(--accent);
   color:#000;
   font-weight:900;
   letter-spacing:2px;
   text-transform:uppercase;
-  cursor:pointer;
 }
 
-.hero-form button:hover{
-  background:transparent;
-  color:#fff;
+.cta:hover{
+  background:#fff;
 }
 
-.form-note{
-  margin-top:8px;
-  font-size:12px;
-  color:rgba(255,255,255,.75);
-  text-align:center;
-}
-
-/* CONTACT SECTION */
-.contact{
+/* CONTENT */
+.section{
+  padding:72px 0;
   background:#fff;
   color:#0b1324;
-  padding:72px 0;
 }
 
-.contact h2{
+.section.alt{
+  background:#f4f6fb;
+}
+
+h2{
   font-family:"Libre Franklin",sans-serif;
   font-weight:900;
   font-size:42px;
-  margin:0 0 18px;
+  margin:0 0 14px;
 }
 
-.contact-form{
-  max-width:620px;
+.lead{
+  font-size:18px;
+  color:rgba(11,19,36,.75);
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea{
-  background:#f4f6fb;
-  border:1px solid rgba(0,0,0,.15);
-  color:#0b1324;
-}
-
-.contact-form button{
+/* FOOTER */
+footer{
   background:#0b1324;
-  color:#fff;
-  border-color:#0b1324;
+  color:rgba(255,255,255,.8);
+  padding:48px 0;
 }
 
-.contact-form button:hover{
-  background:#000;
+footer p{
+  margin:0 0 6px;
 }
 
 @media(max-width:900px){
-  .form-grid{grid-template-columns:1fr}
   .hero p{font-size:18px}
 }
 </style>
@@ -183,70 +140,43 @@ body{
   <div class="hero-inner">
     <div class="container">
       <div class="hero-content">
-
         <h1>office<br>cleaning</h1>
         <p>High quality, bespoke cleaning services for professional environments</p>
-
-        <form class="hero-form" action="mailto:info@thecarpetcleaningcrew.co.uk" method="post" enctype="text/plain">
-          <div class="form-grid">
-            <input type="text" name="organisation" placeholder="Organisation name" required>
-            <input type="text" name="contact" placeholder="Contact name" required>
-            <input type="email" name="email" placeholder="Email address" required>
-            <input type="tel" name="phone" placeholder="Phone number">
-
-            <select name="sector" required>
-              <option value="">Type of organisation</option>
-              <option>Office</option>
-              <option>Education</option>
-              <option>Healthcare</option>
-              <option>Local authority</option>
-              <option>Other</option>
-            </select>
-
-            <textarea name="message" rows="4" placeholder="Brief description of your requirements" required></textarea>
-          </div>
-
-          <button type="submit">Request a quote</button>
-
-          <div class="form-note">
-            Commercial enquiries only
-          </div>
-        </form>
-
+        <a class="cta" href="#contact">Get in touch</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="section">
   <div class="container">
-
-    <h2>Get in touch</h2>
-
-    <form class="hero-form contact-form" action="mailto:info@thecarpetcleaningcrew.co.uk" method="post" enctype="text/plain">
-      <div class="form-grid">
-        <input type="text" name="organisation" placeholder="Organisation name" required>
-        <input type="text" name="contact" placeholder="Contact name" required>
-        <input type="email" name="email" placeholder="Email address" required>
-        <input type="tel" name="phone" placeholder="Phone number">
-
-        <select name="sector" required>
-          <option value="">Type of organisation</option>
-          <option>Office</option>
-          <option>Education</option>
-          <option>Healthcare</option>
-          <option>Local authority</option>
-          <option>Other</option>
-        </select>
-
-        <textarea name="message" rows="4" placeholder="Brief description of your requirements" required></textarea>
-      </div>
-
-      <button type="submit">Send enquiry</button>
-    </form>
-
+    <h2>Caring for your office environment</h2>
+    <p class="lead">
+      Office cleaning is about consistency, presentation, and trust.
+      From reception areas to meeting rooms, we maintain professional standards
+      that reflect your organisation every day.
+    </p>
   </div>
 </section>
+
+<section class="section alt">
+  <div class="container">
+    <h2>Why choose us</h2>
+    <p class="lead">
+      Reliable teams, documented procedures, and clear accountability across
+      every site we manage.
+    </p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <p>The Carpet Cleaning Company</p>
+    <p>Ludlow, Shropshire</p>
+    <p>07802 563213</p>
+    <p>thecarpetcleaningcrew.co.uk</p>
+  </div>
+</footer>
 
 </body>
 </html>
