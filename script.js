@@ -74,4 +74,47 @@ const year = document.getElementById("year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+<script>
+(function(){
+  const nums = document.querySelectorAll(".trust-number");
+  if(!nums.length) return;
+
+  let started = false;
+
+  function run(){
+    if(started) return;
+    started = true;
+
+    nums.forEach(el=>{
+      const target = +el.dataset.target;
+      let val = 0;
+      const step = Math.max(1, Math.floor(target / 60));
+
+      function tick(){
+        val += step;
+        if(val >= target){
+          el.textContent = target;
+        } else {
+          el.textContent = val;
+          requestAnimationFrame(tick);
+        }
+      }
+      tick();
+    });
+  }
+
+  const section = document.getElementById("trust-stats");
+  if(!section) return;
+
+  const obs = new IntersectionObserver(e=>{
+    if(e[0].isIntersecting){
+      run();
+      obs.disconnect();
+    }
+  }, {threshold:0.3});
+
+  obs.observe(section);
+})();
+</script>
+
 
