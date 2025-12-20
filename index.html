@@ -1,912 +1,338 @@
-<!doctype html>
-<html lang="en-GB">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Office Cleaning | The Carpet Cleaning Company</title>
-  <meta name="description" content="High quality, bespoke office cleaning services. Reliable teams, clear standards, and a professional result every day." />
-  <meta name="theme-color" content="#0b1324" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b1324;
+    --ink2:#121b33;
+    --paper:#ffffff;
+    --mist:#f4f6fb;
+    --line:#e6eaf5;
+    --accent:#78a82c;
+    --accent2:#00bcd4;
+    --shadow: 0 12px 40px rgba(12,18,36,.12);
+  }
 
-  <style>
-    :root{
-      --ink:#0b1324;
-      --ink2:#121b33;
-      --paper:#ffffff;
-      --mist:#f4f6fb;
-      --muted:#95a3b6;
-      --line:rgba(255,255,255,.18);
-      --line2:rgba(12,18,36,.12);
-      --accent:#78a82c;
-      --accent2:#00bcd4;
-      --shadow: 0 18px 60px rgba(0,0,0,.18);
-      --shadow2: 0 10px 30px rgba(11,19,36,.12);
-      --radius: 22px;
-      --radius2: 16px;
-      --max: 1160px;
-    }
+  .ccw-wrap{font-family:Lato,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+  .ccw-container{max-width:1180px;margin:0 auto;padding:0 20px;}
+  .ccw-muted{color:rgba(11,19,36,.72)}
+  .ccw-h1,.ccw-h2,.ccw-h3{font-family:"Libre Franklin",sans-serif;font-weight:900;letter-spacing:-.02em;margin:0}
+  .ccw-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#000;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.10);
+    transition:transform .15s ease, filter .15s ease;
+  }
+  .ccw-btn:hover{transform:translateY(-1px);filter:brightness(1.03);}
+  .ccw-btn-ghost{
+    display:inline-block;
+    background:transparent;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.5);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .ccw-btn-ghost:hover{transform:translateY(-1px);background:rgba(255,255,255,.08);}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Lato,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      background:var(--paper);
-      line-height:1.55;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+  /* Top nav inside the page (if your theme header is not ready yet) */
+  .ccw-topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,19,36,.92);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .ccw-topbar-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 0;
+    gap:14px;
+  }
+  .ccw-brand{
+    display:flex; align-items:center; gap:12px;
+    color:#fff; text-decoration:none;
+  }
+  .ccw-brand img{height:34px;width:auto;display:block}
+  .ccw-brand span{font-family:"Libre Franklin",sans-serif;font-weight:900;letter-spacing:-.02em}
+  .ccw-nav{
+    display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+  }
+  .ccw-nav a{
+    color:rgba(255,255,255,.86);
+    text-decoration:none;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.02em;
+  }
+  .ccw-nav a:hover{color:#fff;text-decoration:underline}
+  .ccw-call a{color:#fff;text-decoration:none;font-weight:900}
+  .ccw-call a:hover{text-decoration:underline}
 
-    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-    .topbar{
-      background:linear-gradient(180deg, rgba(11,19,36,.98), rgba(11,19,36,.86));
-      color:#fff;
-    }
+  /* Hero with multiple images layered */
+  .ccw-hero{
+    position:relative; overflow:hidden;
+    min-height:560px; display:flex; align-items:center;
+    background:#1a2238;
+  }
+  .ccw-hero-bg{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.58), rgba(0,0,0,.46)),
+      url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=2400&q=70") center/cover no-repeat;
+    transform:scale(1.02);
+  }
+  .ccw-hero-sheen{
+    position:absolute; inset:-40% -20%;
+    background:radial-gradient(circle at 30% 40%, rgba(0,188,212,.22), transparent 55%);
+    pointer-events:none;
+  }
+  .ccw-hero-inner{position:relative;width:100%;padding:36px 0;}
+  .ccw-hero-grid{display:grid;grid-template-columns: 1.15fr .85fr; gap:26px; align-items:center;}
+  .ccw-hero-title{color:#fff;font-size:clamp(42px,6vw,78px);line-height:.95;margin-bottom:14px;}
+  .ccw-hero-sub{color:rgba(255,255,255,.92);font-weight:300;font-size:clamp(18px,2.2vw,26px);line-height:1.4;margin:0 0 22px;max-width:720px;}
+  .ccw-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
 
-    .header{
-      position:sticky;
-      top:0;
-      z-index:999;
-      backdrop-filter:saturate(140%) blur(8px);
-      background:rgba(11,19,36,.92);
-      border-bottom:1px solid var(--line);
-    }
-    .header-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:12px 0;
-    }
+  .ccw-hero-card{
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow: 0 18px 70px rgba(0,0,0,.28);
+    padding:18px;
+    color:#fff;
+  }
+  .ccw-hero-card h3{font-size:18px;margin:0 0 6px}
+  .ccw-hero-card p{margin:0;color:rgba(255,255,255,.86);font-weight:300;line-height:1.6;font-size:14px;}
+  .ccw-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .ccw-proof{
+    border-radius:14px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    padding:12px;
+  }
+  .ccw-proof .k{font-weight:900;font-size:14px}
+  .ccw-proof .v{color:rgba(255,255,255,.86);font-weight:300;font-size:13px;line-height:1.35;margin-top:4px}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:220px;
-    }
-    .brand-badge{
-      width:42px;height:42px;border-radius:12px;
-      background:linear-gradient(135deg, rgba(120,168,44,1), rgba(0,188,212,1));
-      box-shadow:0 12px 40px rgba(0,0,0,.22);
-    }
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      line-height:1.15;
-    }
-    .brand-title strong{
-      font-family:"Libre Franklin",system-ui,sans-serif;
-      font-weight:900;
-      letter-spacing:.2px;
-      color:#fff;
-      font-size:14px;
-      text-transform:uppercase;
-    }
-    .brand-title span{
-      color:rgba(255,255,255,.78);
-      font-size:12px;
-    }
+  /* Feature strip with images */
+  .ccw-strip{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 0;}
+  .ccw-strip-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;}
+  .ccw-strip h2{font-size:34px;margin:0}
+  .ccw-strip p{margin:10px 0 0;line-height:1.75;font-size:16px}
+  .ccw-strip-tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ccw-tile{
+    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(12,18,36,.07)
+  }
+  .ccw-tile img{width:100%;height:140px;object-fit:cover;display:block}
+  .ccw-tile div{padding:12px}
+  .ccw-tile h4{margin:0;font-family:"Libre Franklin",sans-serif;font-weight:900;font-size:14px}
+  .ccw-tile p{margin:6px 0 0;font-size:13px;line-height:1.55;color:rgba(11,19,36,.76)}
 
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    .nav ul{
-      list-style:none;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      padding:0;margin:0;
-    }
-    .nav a{
-      color:#fff;
-      font-size:13px;
-      letter-spacing:.4px;
-      text-transform:uppercase;
-      opacity:.92;
-      padding:10px 10px;
-      border-radius:12px;
-    }
-    .nav a:hover{background:rgba(255,255,255,.08);opacity:1}
+  /* Services */
+  .ccw-section{padding:70px 0;background:#fff;}
+  .ccw-kicker{font-family:"Libre Franklin",sans-serif;font-weight:900;color:var(--accent2);text-transform:uppercase;letter-spacing:.10em;font-size:12px;margin:0 0 10px;}
+  .ccw-head{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:end;margin-bottom:22px}
+  .ccw-head h2{font-size:44px;margin:0}
+  .ccw-head p{margin:0;line-height:1.75;color:rgba(11,19,36,.78)}
 
-    .nav .has-sub{position:relative}
-    .nav .sub{
-      position:absolute;
-      top:44px;left:0;
-      min-width:240px;
-      background:rgba(15,24,46,.98);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      padding:10px;
-      box-shadow:var(--shadow);
-      display:none;
-    }
-    .nav .sub a{
-      display:block;
-      padding:10px 10px;
-      text-transform:none;
-      letter-spacing:0;
-      font-size:14px;
-      color:rgba(255,255,255,.92);
-      border-radius:12px;
-    }
-    .nav .sub a:hover{background:rgba(255,255,255,.08)}
-    .nav .has-sub:hover .sub{display:block}
+  .ccw-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px;}
+  .ccw-card{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:22px;box-shadow:0 12px 38px rgba(12,18,36,.08);
+    transition:transform .15s ease, box-shadow .15s ease;
+    height:100%;
+  }
+  .ccw-card:hover{transform:translateY(-2px);box-shadow:0 18px 60px rgba(12,18,36,.12);}
+  .ccw-card img{width:100%;height:160px;object-fit:cover;border-radius:14px;display:block;border:1px solid rgba(11,19,36,.06)}
+  .ccw-card h3{font-size:18px;margin:14px 0 0}
+  .ccw-card p{margin:10px 0 0;line-height:1.7;color:rgba(11,19,36,.78);font-size:15px;}
+  .ccw-link{display:inline-flex;gap:8px;align-items:center;margin-top:14px;text-decoration:none;font-weight:900;color:var(--ink);font-size:13px;letter-spacing:.08em;text-transform:uppercase;}
+  .ccw-link span{color:var(--accent2);font-size:16px}
 
-    .header-right{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .phone{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      color:#fff;
-      font-size:13px;
-      background:rgba(255,255,255,.06);
-      white-space:nowrap;
-    }
-    .phone-dot{
-      width:10px;height:10px;border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 0 6px rgba(120,168,44,.18);
-    }
+  /* Testimonials */
+  .ccw-test{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0;}
+  .ccw-quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+  .ccw-quote{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(12,18,36,.07)
+  }
+  .ccw-quote p{margin:0;line-height:1.7;color:rgba(11,19,36,.78)}
+  .ccw-quote .name{margin-top:12px;font-weight:900}
+  .ccw-quote .meta{color:rgba(11,19,36,.60);font-size:13px;margin-top:2px}
 
-    .burger{
-      display:none;
-      width:44px;height:44px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(255,255,255,.06);
-      cursor:pointer;
-      position:relative;
-    }
-    .burger span{
-      position:absolute;left:12px;right:12px;height:2px;border-radius:2px;
-      background:#fff;opacity:.9;
-      transition:.2s ease;
-    }
-    .burger span:nth-child(1){top:14px}
-    .burger span:nth-child(2){top:21px}
-    .burger span:nth-child(3){top:28px}
+  /* Logos */
+  .ccw-logos{background:#fff;border-bottom:1px solid var(--line);padding:26px 0;}
+  .ccw-logo-row{display:flex;gap:14px;overflow:auto;padding:8px 2px;-webkit-overflow-scrolling:touch;}
+  .ccw-logo{flex:0 0 auto;width:170px;height:72px;border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;background:#fff;}
+  .ccw-logo img{max-width:140px;max-height:44px;opacity:.9;filter:grayscale(1);transition:filter .15s ease, opacity .15s ease;}
+  .ccw-logo:hover img{filter:none;opacity:1;}
 
-    .mobile-panel{
-      display:none;
-      background:rgba(11,19,36,.98);
-      border-bottom:1px solid var(--line);
-      padding:12px 0 18px;
-    }
-    .mobile-panel a{
-      display:block;
-      color:#fff;
-      padding:12px 12px;
-      border-radius:14px;
-      margin:4px 0;
-      background:rgba(255,255,255,.06);
-      font-size:14px;
-    }
+  /* Contact */
+  .ccw-contact{padding:70px 0;background:#fff;}
+  .ccw-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .ccw-box{
+    border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 12px 34px rgba(12,18,36,.06)
+  }
+  .ccw-box h3{margin:0;font-size:18px}
+  .ccw-box p{margin:10px 0 0;line-height:1.7;color:rgba(11,19,36,.78)}
+  .ccw-form input,.ccw-form textarea{
+    width:100%;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px 12px;
+    font:inherit;
+    margin-top:10px;
+    outline:none;
+  }
+  .ccw-form textarea{min-height:110px;resize:vertical}
+  .ccw-form button{
+    margin-top:12px;
+    border:0;
+    border-radius:12px;
+    padding:12px 14px;
+    font:inherit;
+    font-weight:900;
+    cursor:pointer;
+    background:var(--ink);
+    color:#fff;
+  }
+  .ccw-form button:hover{filter:brightness(1.05)}
 
-    .hero{
-      position:relative;
-      min-height:560px;
-      color:#fff;
-      overflow:hidden;
-      background:radial-gradient(1000px 500px at 20% 20%, rgba(0,188,212,.22), transparent 60%),
-                 radial-gradient(900px 500px at 70% 30%, rgba(120,168,44,.18), transparent 60%),
-                 linear-gradient(180deg, #0b1324, #0a1020);
-    }
-    .hero video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      filter:saturate(105%) contrast(105%);
-      transform:scale(1.02);
-    }
-    .hero::before{
-      content:"";
-      position:absolute;inset:0;
-      background:rgba(0,0,0,.55);
-    }
-    .hero-inner{
-      position:relative;
-      padding:86px 0 64px;
-      min-height:560px;
-      display:flex;
-      align-items:center;
-    }
-    .hero-content{
-      max-width:760px;
-    }
-    .hero h1{
-      margin:0 0 14px;
-      font-family:"Libre Franklin",system-ui,sans-serif;
-      font-weight:900;
-      text-transform:lowercase;
-      letter-spacing:.6px;
-      font-size:80px;
-      line-height:.92;
-    }
-    .hero p{
-      margin:0 0 26px;
-      font-weight:300;
-      font-size:26px;
-      color:rgba(255,255,255,.92);
-    }
-    .cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:14px 22px;
-      border-radius:999px;
-      background:var(--accent);
-      color:#000;
-      border:1px solid rgba(120,168,44,1);
-      font-size:13px;
-      letter-spacing:2.4px;
-      text-transform:uppercase;
-      box-shadow:0 18px 60px rgba(0,0,0,.28);
-    }
-    .cta:hover{
-      background:transparent;
-      color:#fff;
-      border-color:#fff;
-    }
-    .cta small{
-      display:block;
-      letter-spacing:0;
-      text-transform:none;
-      font-size:12px;
-      opacity:.9;
-      margin-top:2px;
-    }
+  /* Footer */
+  .ccw-footer{background:var(--ink);color:rgba(255,255,255,.86);padding:46px 0;}
+  .ccw-footgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:26px;}
+  .ccw-footgrid h4{margin:0 0 10px;font-family:"Libre Franklin",sans-serif;font-weight:900;color:#fff;font-size:14px;letter-spacing:.06em;text-transform:uppercase;}
+  .ccw-footgrid a{color:rgba(255,255,255,.86);text-decoration:none;}
+  .ccw-footgrid a:hover{color:#fff;text-decoration:underline;}
+  .ccw-footgrid p{margin:0;line-height:1.7;}
+  .ccw-small{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.10);font-size:13px;color:rgba(255,255,255,.70);}
 
-    .section{
-      padding:64px 0;
-    }
-    .section.alt{background:var(--mist)}
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:32px;
-      align-items:center;
-    }
-    .eyebrow{
-      font-family:"Libre Franklin",system-ui,sans-serif;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:2px;
-      font-size:12px;
-      color:rgba(11,19,36,.6);
-      margin:0 0 10px;
-    }
-    h2{
-      font-family:"Libre Franklin",system-ui,sans-serif;
-      margin:0 0 12px;
-      font-weight:900;
-      font-size:44px;
-      line-height:1.05;
-    }
-    h3{
-      font-family:"Libre Franklin",system-ui,sans-serif;
-      margin:0 0 10px;
-      font-weight:900;
-      font-size:28px;
-      line-height:1.1;
-    }
-    .lead{
-      color:rgba(11,19,36,.78);
-      font-size:18px;
-      margin:0;
-    }
+  @media (max-width: 980px){
+    .ccw-hero-grid{grid-template-columns:1fr}
+    .ccw-strip-grid{grid-template-columns:1fr}
+    .ccw-head{grid-template-columns:1fr}
+    .ccw-cards{grid-template-columns:1fr}
+    .ccw-quotes{grid-template-columns:1fr}
+    .ccw-contact-grid{grid-template-columns:1fr}
+    .ccw-footgrid{grid-template-columns:1fr 1fr}
+    .ccw-nav{display:none}
+  }
+  @media (max-width: 560px){
+    .ccw-footgrid{grid-template-columns:1fr}
+  }
+</style>
 
-    .card{
-      background:#fff;
-      border:1px solid var(--line2);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow2);
-      overflow:hidden;
-    }
+<div class="ccw-wrap">
 
-    .slider{
-      position:relative;
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:var(--shadow2);
-      border:1px solid rgba(12,18,36,.10);
-    }
-    .slides{
-      display:flex;
-      transition:transform .45s ease;
-      will-change:transform;
-    }
-    .slide{
-      min-width:100%;
-      aspect-ratio: 3 / 2;
-      background:#dfe6f3;
-      position:relative;
-    }
-    .slide img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-    .slider-controls{
-      position:absolute;
-      inset:auto 16px 16px 16px;
-      display:flex;
-      justify-content:space-between;
-      pointer-events:none;
-    }
-    .btn{
-      pointer-events:auto;
-      width:44px;height:44px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.28);
-      background:rgba(0,0,0,.34);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      backdrop-filter: blur(8px);
-    }
-    .btn:hover{background:rgba(0,0,0,.48)}
-
-    .why{
-      background: #d8ddce;
-      position:relative;
-      overflow:hidden;
-    }
-    .why .big-why{
-      font-family:"Libre Franklin",system-ui,sans-serif;
-      font-weight:900;
-      font-size:110px;
-      line-height:.8;
-      margin:0;
-      color:rgba(255,255,255,.85);
-      text-transform:lowercase;
-    }
-    .why .why-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:26px;
-      margin-top:18px;
-    }
-    .why .why-card{
-      background:rgba(255,255,255,.86);
-      border:1px solid rgba(12,18,36,.10);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow2);
-    }
-    .list{
-      margin:14px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:10px;
-    }
-    .list li{
-      display:flex;
-      gap:10px;
-      color:rgba(11,19,36,.82);
-    }
-    .tick{
-      width:22px;height:22px;border-radius:8px;
-      background:rgba(120,168,44,.18);
-      border:1px solid rgba(120,168,44,.45);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      flex:0 0 22px;
-      margin-top:2px;
-    }
-    .tick:before{
-      content:"✓";
-      color:#2c3b12;
-      font-weight:900;
-      font-size:14px;
-    }
-
-    .reviews{
-      margin-top:18px;
-      border-radius:var(--radius);
-      overflow:hidden;
-      border:1px solid rgba(12,18,36,.10);
-      background:rgba(255,255,255,.9);
-    }
-    .review-track{
-      display:flex;
-      transition:transform .45s ease;
-    }
-    .review{
-      min-width:100%;
-      padding:18px 18px 20px;
-    }
-    .review-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:10px;
-    }
-    .review-name{
-      font-weight:700;
-      color:rgba(11,19,36,.92);
-    }
-    .stars{
-      letter-spacing:1px;
-      color:rgba(0,0,0,.78);
-      font-size:14px;
-    }
-    .review p{
-      margin:0;
-      color:rgba(11,19,36,.78);
-    }
-    .review-controls{
-      display:flex;
-      justify-content:flex-end;
-      gap:10px;
-      padding:12px 12px 14px;
-      border-top:1px solid rgba(12,18,36,.10);
-    }
-    .review-controls button{
-      width:40px;height:40px;border-radius:14px;
-      border:1px solid rgba(12,18,36,.14);
-      background:#fff;
-      cursor:pointer;
-    }
-    .review-controls button:hover{background:var(--mist)}
-
-    .logos{
-      display:flex;
-      gap:18px;
-      overflow:hidden;
-      padding:12px 0;
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    }
-    .logos .row{
-      display:flex;
-      gap:18px;
-      animation: scroll 24s linear infinite;
-    }
-    .logo-pill{
-      width:160px;
-      height:70px;
-      border-radius:18px;
-      border:1px solid rgba(12,18,36,.10);
-      background:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px;
-      box-shadow:0 10px 30px rgba(11,19,36,.08);
-      flex:0 0 auto;
-    }
-    .logo-pill img{
-      max-height:40px;
-      max-width:120px;
-      object-fit:contain;
-      opacity:.86;
-    }
-    @keyframes scroll{
-      from{transform:translateX(0)}
-      to{transform:translateX(-50%)}
-    }
-
-    .contact{
-      padding:64px 0;
-      background:#fff;
-    }
-    .contact-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:26px;
-      align-items:stretch;
-    }
-    .contact-card{
-      border-radius:var(--radius);
-      border:1px solid rgba(12,18,36,.10);
-      box-shadow:var(--shadow2);
-      background:#fff;
-      padding:22px;
-    }
-    .map-badge{
-      margin-top:18px;
-      width:160px;
-      border-radius:20px;
-      border:1px solid rgba(12,18,36,.10);
-      background:var(--mist);
-      padding:12px;
-    }
-    .form-embed{
-      height:100%;
-      min-height:340px;
-      border-radius:var(--radius);
-      border:1px solid rgba(12,18,36,.10);
-      background:var(--mist);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      color:rgba(11,19,36,.65);
-      text-align:center;
-    }
-
-    .cta-strip{
-      background:#000;
-      color:#fff;
-      padding:26px 0;
-    }
-    .cta-strip .wrap{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .cta-strip h4{
-      margin:0;
-      font-family:"Libre Franklin",system-ui,sans-serif;
-      font-weight:900;
-      font-size:22px;
-    }
-    .cta-strip a{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 18px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.32);
-      background:rgba(255,255,255,.08);
-      color:#fff;
-      font-size:13px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-    }
-    .cta-strip a:hover{background:rgba(255,255,255,.14)}
-
-    footer{
-      background:var(--ink);
-      color:rgba(255,255,255,.84);
-      padding:46px 0;
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
-      gap:18px;
-    }
-    .footer-title{
-      font-family:"Libre Franklin",system-ui,sans-serif;
-      font-weight:900;
-      color:#fff;
-      margin:0 0 10px;
-      font-size:14px;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-    .footer a{color:rgba(255,255,255,.82)}
-    .footer a:hover{color:#fff}
-    .footer p{margin:0 0 8px}
-    .socials{display:flex;gap:10px;margin-top:12px}
-    .social{
-      width:44px;height:44px;border-radius:16px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(255,255,255,.06);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:900;color:#fff;
-    }
-
-    @media (max-width: 980px){
-      .nav ul{display:none}
-      .burger{display:block}
-      .hero h1{font-size:64px}
-      .grid-2{grid-template-columns:1fr}
-      .why .why-grid{grid-template-columns:1fr}
-      .contact-grid{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width: 560px){
-      .hero{min-height:520px}
-      .hero-inner{padding:72px 0 56px;min-height:520px}
-      .hero h1{font-size:52px}
-      .hero p{font-size:20px}
-      h2{font-size:36px}
-      .why .big-why{font-size:86px}
-      .footer-grid{grid-template-columns:1fr}
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="#">
-          <div class="brand-badge" aria-hidden="true"></div>
-          <div class="brand-title">
-            <strong>The Carpet Cleaning Company</strong>
-            <span>Commercial cleaning pages</span>
-          </div>
+  <div class="ccw-topbar">
+    <div class="ccw-container">
+      <div class="ccw-topbar-inner">
+        <a class="ccw-brand" href="/">
+          <img src="https://via.placeholder.com/180x46.png?text=YOUR+LOGO" alt="Logo">
+          <span>Your Cleaning Company</span>
         </a>
-
-        <nav class="nav" aria-label="Primary navigation">
-          <ul>
-            <li class="has-sub">
-              <a href="#sectors">Sectors</a>
-              <div class="sub">
-                <a href="#office">Office Cleaning</a>
-                <a href="#venue">Venue</a>
-                <a href="#industrial">Industrial</a>
-                <a href="#education">Education</a>
-                <a href="#it">IT Cleaning</a>
-              </div>
-            </li>
-            <li class="has-sub">
-              <a href="#services">Services</a>
-              <div class="sub">
-                <a href="#floors">Floor Restorations</a>
-                <a href="#carpets">Carpet and Upholstery</a>
-                <a href="#washrooms">Washrooms</a>
-                <a href="#windows">Windows</a>
-                <a href="#emergency">Emergency Response</a>
-              </div>
-            </li>
-            <li><a href="#sustainability">Sustainability</a></li>
-            <li class="has-sub">
-              <a href="#about">About</a>
-              <div class="sub">
-                <a href="#safe">Safe Cleaning</a>
-                <a href="#esg">ESG</a>
-                <a href="#awards">Awards</a>
-                <a href="#latest">Latest</a>
-              </div>
-            </li>
-            <li><a href="#vacancies">Vacancies</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        <nav class="ccw-nav">
+          <a href="#services">Services</a>
+          <a href="#sectors">Sectors</a>
+          <a href="#proof">Proof</a>
+          <a href="#contact">Contact</a>
         </nav>
-
-        <div class="header-right">
-          <a class="phone" href="tel:07802563213">
-            <span class="phone-dot" aria-hidden="true"></span>
-            07802 563213
-          </a>
-
-          <button class="burger" id="burger" aria-label="Open menu">
-            <span></span><span></span><span></span>
-          </button>
+        <div class="ccw-call">
+          <a href="tel:01234567890">01234 567890</a>
         </div>
-      </div>
-    </div>
-
-    <div class="mobile-panel" id="mobilePanel">
-      <div class="container">
-        <a href="#office">Office Cleaning</a>
-        <a href="#services">Services</a>
-        <a href="#why">Why choose us</a>
-        <a href="#contact">Get in touch</a>
       </div>
     </div>
   </div>
 
-  <section class="hero" id="office">
-    <video autoplay muted playsinline loop>
-      <!-- Put your own video file here for GitHub (recommended: MP4) -->
-      <!-- Example: <source src="assets/office.mp4" type="video/mp4" /> -->
-    </video>
-
-    <div class="hero-inner">
-      <div class="container">
-        <div class="hero-content">
-          <h1>office<br>cleaning</h1>
-          <p>High quality, bespoke cleaning services</p>
-          <a class="cta" href="#contact">
-            Built in the UK
-            <small>Tell us your requirements</small>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="caring">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <p class="eyebrow">Office environments</p>
-          <h2>caring for your office environment</h2>
-        </div>
-        <div>
-          <p class="lead">
-            Office cleaning is about standards, consistency, and the right impression every day.
-            From reception areas and meeting rooms to washrooms and break spaces, we keep your site looking professional.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="experienced">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <div class="slider" data-slider="images">
-            <div class="slides">
-              <!-- Replace these with your own images in /assets -->
-              <div class="slide"><img alt="Office cleaning image 1" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=70"></div>
-              <div class="slide"><img alt="Office cleaning image 2" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=70"></div>
-              <div class="slide"><img alt="Office cleaning image 3" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=70"></div>
-              <div class="slide"><img alt="Office cleaning image 4" src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=1600&q=70"></div>
-            </div>
-            <div class="slider-controls">
-              <button class="btn" type="button" data-prev aria-label="Previous slide">‹</button>
-              <button class="btn" type="button" data-next aria-label="Next slide">›</button>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h3>Experienced cleaning operatives</h3>
-          <p class="lead">
-            Fully trained teams, consistently presented, with clear checks and standards.
-            We focus on reliability, safety, and a professional finish across every area of your site.
-          </p>
-
-          <div style="height:14px"></div>
-
-          <div class="card" style="padding:18px;border-radius:22px">
-            <p style="margin:0;color:rgba(11,19,36,.8)">
-              If you want this page to look even closer to the example, the biggest visual difference will come from:
-              using your own video, your own photos, and matching the exact spacing and font sizes to your brand.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section why" id="why">
-    <div class="container">
-      <p class="big-why">why</p>
-
-      <div class="why-grid">
-        <div class="why-card">
-          <h3 style="margin-top:0">Why choose us?</h3>
-          <p style="margin:0;color:rgba(11,19,36,.78)">
-            Clear specs, consistent delivery, and a site that stays presentable day after day.
-          </p>
-
-          <ul class="list">
-            <li><span class="tick" aria-hidden="true"></span><span>Reliable staffing and consistent standards</span></li>
-            <li><span class="tick" aria-hidden="true"></span><span>Documented checklists and clear scope</span></li>
-            <li><span class="tick" aria-hidden="true"></span><span>Fast response when priorities change</span></li>
-            <li><span class="tick" aria-hidden="true"></span><span>Professional presentation on site</span></li>
-          </ul>
-        </div>
-
-        <div class="why-card">
-          <h3 style="margin-top:0">Reviews</h3>
-
-          <div class="reviews" data-reviews="1">
-            <div class="review-track">
-              <div class="review">
-                <div class="review-top">
-                  <div>
-                    <div class="review-name">Chris C</div>
-                    <div style="color:rgba(11,19,36,.55);font-size:12px">20 Nov 2024</div>
-                  </div>
-                  <div class="stars">★★★★★</div>
-                </div>
-                <p>Absolutely fantastic company to use, very professional throughout the service.</p>
-              </div>
-
-              <div class="review">
-                <div class="review-top">
-                  <div>
-                    <div class="review-name">R J</div>
-                    <div style="color:rgba(11,19,36,.55);font-size:12px">27 Mar 2024</div>
-                  </div>
-                  <div class="stars">★★★★★</div>
-                </div>
-                <p>A very good, environmentally conscious company.</p>
-              </div>
-
-              <div class="review">
-                <div class="review-top">
-                  <div>
-                    <div class="review-name">Matthew T</div>
-                    <div style="color:rgba(11,19,36,.55);font-size:12px">07 Sep 2021</div>
-                  </div>
-                  <div class="stars">★★★★★</div>
-                </div>
-                <p>Very good organisation and the service is always exemplary.</p>
-              </div>
-            </div>
-
-            <div class="review-controls">
-              <button type="button" data-rprev aria-label="Previous review">‹</button>
-              <button type="button" data-rnext aria-label="Next review">›</button>
-            </div>
-          </div>
-
-          <p style="margin:12px 0 0;color:rgba(11,19,36,.72)">
-            You can swap this section for a real Google reviews embed later.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="logos">
-    <div class="container">
-      <h3 style="margin:0 0 12px">Trusted by organisations</h3>
-
-      <div class="logos" aria-label="Client logos carousel">
-        <div class="row">
-          <!-- Replace with your own logos in /assets -->
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-
-          <!-- Duplicate block for seamless scrolling -->
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-          <div class="logo-pill"><img alt="Client logo" src="https://dummyimage.com/220x80/ffffff/0b1324.png&text=Client+Logo"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h2 style="margin-top:0">get in touch</h2>
-          <p style="margin:0 0 10px;color:rgba(11,19,36,.78)">
-            The Carpet Cleaning Company<br>
-            Ludlow, Shropshire
-          </p>
-
-          <p style="margin:0 0 14px;color:rgba(11,19,36,.78)">
-            Phone: <a href="tel:07802563213">07802 563213</a><br>
-            Website: <a href="https://www.thecarpetcleaningcrew.co.uk" target="_blank" rel="noopener">thecarpetcleaningcrew.co.uk</a>
-          </p>
-
-          <div class="map-badge">
-            <div style="font-weight:700;color:rgba(11,19,36,.82)">Service area</div>
-            <div style="font-size:13px;color:rgba(11,19,36,.70)">Shropshire, Herefordshire, Worcestershire and UK commercial work</div>
-          </div>
-        </div>
-
-        <div class="form-embed">
+  <section class="ccw-hero">
+    <div class="ccw-hero-bg" aria-hidden="true"></div>
+    <div class="ccw-hero-sheen" aria-hidden="true"></div>
+    <div class="ccw-hero-inner">
+      <div class="ccw-container">
+        <div class="ccw-hero-grid">
           <div>
-            <div style="font-family:'Libre Franklin',system-ui,sans-serif;font-weight:900;font-size:18px;margin-bottom:8px;color:rgba(11,19,36,.80)">
-              Contact form embed
+            <div class="ccw-kicker" style="color:rgba(255,255,255,.85)">Commercial and domestic cleaning</div>
+            <h1 class="ccw-h1 ccw-hero-title">High standards<br>no disruption</h1>
+            <p class="ccw-hero-sub">Professional cleaning for offices, venues and high footfall sites, plus deep cleaning for homes. Built around results, reliability and presentation.</p>
+            <div class="ccw-hero-actions">
+              <a class="ccw-btn" href="#contact">Get a quote</a>
+              <a class="ccw-btn-ghost" href="#services">View services</a>
             </div>
-            <div style="max-width:420px">
-              If you want, I will add your exact form here:
-              HubSpot, Google Forms, JotForm, Formspree, or a simple mailto form.
-              Tell me which one you want.
+          </div>
+
+          <aside class="ccw-hero-card">
+            <h3 class="ccw-h3">What you get</h3>
+            <p>Clear scope, consistent results, and a process that makes you look good to your customers, staff, and visitors.</p>
+            <div class="ccw-proof-grid">
+              <div class="ccw-proof">
+                <div class="k">Fast scheduling</div>
+                <div class="v">Out of hours options for commercial sites</div>
+              </div>
+              <div class="ccw-proof">
+                <div class="k">Site ready</div>
+                <div class="v">Method statements and compliance friendly</div>
+              </div>
+              <div class="ccw-proof">
+                <div class="k">Quality finish</div>
+                <div class="v">Detail focused work, not a quick splash and dash</div>
+              </div>
+              <div class="ccw-proof">
+                <div class="k">Maintenance</div>
+                <div class="v">Planned programmes to protect your floors</div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ccw-strip">
+    <div class="ccw-container">
+      <div class="ccw-strip-grid">
+        <div>
+          <div class="ccw-kicker">First impressions count</div>
+          <h2 class="ccw-h2">A cleaner building changes how people feel</h2>
+          <p class="ccw-muted">This page includes multiple images and full sections so it actually feels like a proper website. Swap the images and text and it becomes yours.</p>
+        </div>
+        <div class="ccw-strip-tiles">
+          <div class="ccw-tile">
+            <img src="https://images.unsplash.com/photo-1581579185169-201e2f67d24a?auto=format&fit=crop&w=1600&q=70" alt="Office cleaning">
+            <div>
+              <h4>Offices</h4>
+              <p>Daily, weekly or periodic deep cleans with minimal disruption.</p>
+            </div>
+          </div>
+          <div class="ccw-tile">
+            <img src="https://images.unsplash.com/photo-1560067174-8943bdc73d2b?auto=format&fit=crop&w=1600&q=70" alt="Hotel and venue cleaning">
+            <div>
+              <h4>Venues</h4>
+              <p>Front of house presentation focused cleaning for public spaces.</p>
+            </div>
+          </div>
+          <div class="ccw-tile">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=70" alt="Washroom cleaning">
+            <div>
+              <h4>Washrooms</h4>
+              <p>Hygiene critical areas handled properly and consistently.</p>
+            </div>
+          </div>
+          <div class="ccw-tile">
+            <img src="https://images.unsplash.com/photo-1600566753151-384129cf4e3d?auto=format&fit=crop&w=1600&q=70" alt="Residential cleaning">
+            <div>
+              <h4>Homes</h4>
+              <p>Deep cleaning with a finish you can actually see and feel.</p>
             </div>
           </div>
         </div>
@@ -914,102 +340,163 @@
     </div>
   </section>
 
-  <section class="cta-strip">
-    <div class="container">
-      <div class="wrap">
-        <h4>Let’s work together</h4>
-        <a href="#contact">Get a quote</a>
+  <section id="services" class="ccw-section">
+    <div class="ccw-container">
+      <div class="ccw-head">
+        <div>
+          <div class="ccw-kicker">Services</div>
+          <h2 class="ccw-h2">What we do</h2>
+        </div>
+        <p>These are full blocks with images and content. This is what you were missing. Swap the photos and titles and it becomes a complete looking site.</p>
+      </div>
+
+      <div class="ccw-cards">
+        <div class="ccw-card">
+          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=70" alt="Carpet cleaning">
+          <h3 class="ccw-h3">Carpet cleaning</h3>
+          <p>Deep cleaning or maintenance programmes for high footfall areas, offices, hotels and homes.</p>
+          <a class="ccw-link" href="#contact">Request a quote <span>›</span></a>
+        </div>
+
+        <div class="ccw-card">
+          <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=1600&q=70" alt="Floor care">
+          <h3 class="ccw-h3">Hard floor care</h3>
+          <p>Machine scrubs, strip and seal, and periodic restoration for durable surfaces.</p>
+          <a class="ccw-link" href="#contact">Request a quote <span>›</span></a>
+        </div>
+
+        <div class="ccw-card">
+          <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1600&q=70" alt="Commercial cleaning">
+          <h3 class="ccw-h3">Commercial cleaning</h3>
+          <p>Reliable cleaning services for workplaces and public spaces, including out of hours schedules.</p>
+          <a class="ccw-link" href="#contact">Request a quote <span>›</span></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
+  <section id="sectors" class="ccw-test">
+    <div class="ccw-container">
+      <div class="ccw-head" style="margin-bottom:0">
         <div>
-          <div class="footer-title">The Carpet Cleaning Company</div>
-          <p>Ludlow, Shropshire</p>
-          <p>T: <a href="tel:07802563213">07802 563213</a></p>
-          <p>W: <a href="https://www.thecarpetcleaningcrew.co.uk" target="_blank" rel="noopener">thecarpetcleaningcrew.co.uk</a></p>
-          <div class="socials">
-            <a class="social" href="#" aria-label="Facebook">f</a>
-            <a class="social" href="#" aria-label="LinkedIn">in</a>
-            <a class="social" href="#" aria-label="X">x</a>
-          </div>
+          <div class="ccw-kicker">Sectors</div>
+          <h2 class="ccw-h2">Where we work</h2>
         </div>
+        <p>For a real site, each sector becomes its own page. This section acts like the overview.</p>
+      </div>
 
-        <div>
-          <div class="footer-title">Policies</div>
-          <p><a href="#">Policies</a></p>
-          <p><a href="#">Privacy</a></p>
-          <p><a href="#">Environmental</a></p>
+      <div class="ccw-quotes" style="margin-top:18px">
+        <div class="ccw-quote">
+          <p>Offices, business parks, shared workspaces, reception areas, corridors, stairwells and meeting rooms.</p>
+          <div class="name">Offices</div>
+          <div class="meta">Planned maintenance available</div>
         </div>
-
-        <div>
-          <div class="footer-title">Navigation</div>
-          <p><a href="#office">Office Cleaning</a></p>
-          <p><a href="#why">Why choose us</a></p>
-          <p><a href="#contact">Contact</a></p>
+        <div class="ccw-quote">
+          <p>Hotels, venues, wedding spaces, conference areas, restaurants and high footfall public zones.</p>
+          <div class="name">Venues</div>
+          <div class="meta">Presentation focused cleaning</div>
         </div>
-
-        <div>
-          <div class="footer-title">Accreditations</div>
-          <p><a href="#">Insurance</a></p>
-          <p><a href="#">Training</a></p>
-          <p><a href="#">Certificates</a></p>
+        <div class="ccw-quote">
+          <p>Estates, communal areas, property management, multi building sites and shared facilities.</p>
+          <div class="name">Estates</div>
+          <div class="meta">Consistent standards across sites</div>
         </div>
       </div>
     </div>
+  </section>
+
+  <section id="proof" class="ccw-logos">
+    <div class="ccw-container">
+      <div class="ccw-kicker">Trusted by</div>
+      <div class="ccw-logo-row">
+        <div class="ccw-logo"><img src="https://via.placeholder.com/160x46.png?text=Client+Logo" alt="Client logo"></div>
+        <div class="ccw-logo"><img src="https://via.placeholder.com/160x46.png?text=Client+Logo" alt="Client logo"></div>
+        <div class="ccw-logo"><img src="https://via.placeholder.com/160x46.png?text=Client+Logo" alt="Client logo"></div>
+        <div class="ccw-logo"><img src="https://via.placeholder.com/160x46.png?text=Client+Logo" alt="Client logo"></div>
+        <div class="ccw-logo"><img src="https://via.placeholder.com/160x46.png?text=Client+Logo" alt="Client logo"></div>
+      </div>
+      <p class="ccw-muted" style="margin:10px 0 0;font-size:14px">Replace these with your real client logos or accreditations.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="ccw-contact">
+    <div class="ccw-container">
+      <div class="ccw-head">
+        <div>
+          <div class="ccw-kicker">Contact</div>
+          <h2 class="ccw-h2">Tell us what you need</h2>
+        </div>
+        <p>Use this now. Later you can replace this form with your WordPress form plugin or your Beaver Builder form module.</p>
+      </div>
+
+      <div class="ccw-contact-grid">
+        <div class="ccw-box">
+          <h3 class="ccw-h3">Quick contact</h3>
+          <p>
+            Phone: <a href="tel:01234567890">01234 567890</a><br>
+            Email: <a href="mailto:info@example.com">info@example.com</a><br>
+            Location: Your area here
+          </p>
+          <p class="ccw-muted">If you want, I can rewrite this copy so it matches carpet cleaning exactly, including your packages and the right tone.</p>
+        </div>
+
+        <div class="ccw-box">
+          <h3 class="ccw-h3">Message</h3>
+          <form class="ccw-form" onsubmit="event.preventDefault(); alert('This demo form does not send. Use a WP form plugin or Beaver form module.');">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Phone">
+            <textarea placeholder="Tell us what needs cleaning"></textarea>
+            <button type="submit">Send message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ccw-footer">
+    <div class="ccw-container">
+      <div class="ccw-footgrid">
+        <div>
+          <h4>Company</h4>
+          <p>
+            Your Cleaning Company<br>
+            Address line 1<br>
+            Address line 2<br><br>
+            T: 01234 567890<br>
+            E: <a href="mailto:info@example.com">info@example.com</a>
+          </p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <p>
+            <a href="#services">Carpet cleaning</a><br>
+            <a href="#services">Hard floor care</a><br>
+            <a href="#services">Commercial cleaning</a>
+          </p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <p>
+            <a href="#sectors">Sectors</a><br>
+            <a href="#proof">Proof</a><br>
+            <a href="#contact">Contact</a>
+          </p>
+        </div>
+        <div>
+          <h4>Compliance</h4>
+          <p>
+            <a href="#">Privacy</a><br>
+            <a href="#">Policies</a><br>
+            <a href="#">Terms</a>
+          </p>
+        </div>
+      </div>
+      <div class="ccw-small">
+        © <span id="ccw-year"></span> Your Cleaning Company. All rights reserved.
+      </div>
+    </div>
+    <script>(function(){var y=document.getElementById("ccw-year");if(y)y.textContent=new Date().getFullYear();})();</script>
   </footer>
 
-  <script>
-    // Mobile menu
-    const burger = document.getElementById('burger');
-    const mobilePanel = document.getElementById('mobilePanel');
-    burger.addEventListener('click', () => {
-      const open = mobilePanel.style.display === 'block';
-      mobilePanel.style.display = open ? 'none' : 'block';
-    });
-
-    // Image slider
-    function initSlider(root){
-      const slides = root.querySelector('.slides');
-      const total = slides.children.length;
-      let i = 0;
-
-      function go(n){
-        i = (n + total) % total;
-        slides.style.transform = translateX(${-i * 100}%);
-      }
-
-      root.querySelector('[data-prev]').addEventListener('click', () => go(i - 1));
-      root.querySelector('[data-next]').addEventListener('click', () => go(i + 1));
-
-      // Auto
-      setInterval(() => go(i + 1), 4500);
-    }
-    const slider = document.querySelector('[data-slider="images"]');
-    if(slider) initSlider(slider);
-
-    // Reviews slider
-    function initReviews(root){
-      const track = root.querySelector('.review-track');
-      const total = track.children.length;
-      let i = 0;
-
-      function go(n){
-        i = (n + total) % total;
-        track.style.transform = translateX(${-i * 100}%);
-      }
-
-      root.querySelector('[data-rprev]').addEventListener('click', () => go(i - 1));
-      root.querySelector('[data-rnext]').addEventListener('click', () => go(i + 1));
-
-      setInterval(() => go(i + 1), 6000);
-    }
-    const reviews = document.querySelector('[data-reviews="1"]');
-    if(reviews) initReviews(reviews);
-  </script>
-
-</body>
-</html>
+</div>
