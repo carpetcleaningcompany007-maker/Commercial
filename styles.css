@@ -291,3 +291,41 @@ textarea {
     display: none;
   }
 }
+.trust-grid{
+  margin-top:36px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.trust-card{
+  background:#fff;
+  border-radius:22px;
+  box-shadow:0 18px 60px rgba(11,19,36,.18);
+  padding:22px;
+  text-align:center;
+}
+
+.trust-number{
+  font-family:"Libre Franklin",sans-serif;
+  font-weight:900;
+  font-size:clamp(36px,5vw,56px);
+  color:#0b1324;
+}
+
+.trust-number::after{
+  content:"+";
+}
+
+.trust-label{
+  margin-top:6px;
+  font-size:14px;
+  color:#2a3558;
+}
+
+@media(max-width:900px){
+  .trust-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:500px){
+  .trust-grid{grid-template-columns:1fr}
+}
