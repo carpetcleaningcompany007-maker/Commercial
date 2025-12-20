@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Office Cleaning | The Carpet Cleaning Company</title>
-<meta name="description" content="High quality, bespoke office cleaning services. Reliable teams, clear standards, and a professional result every day.">
+<title>Specialist Care & Institutional Services | The Carpet Cleaning Company</title>
+<meta name="description" content="Specialist cleaning and support services for universities, care organisations, and institutional environments.">
 <meta name="theme-color" content="#0b1324">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,6 @@
   --ink:#0b1324;
   --paper:#ffffff;
   --accent:#78a82c;
-  --radius:22px;
 }
 
 *{box-sizing:border-box}
@@ -29,54 +28,72 @@ body{
   color:#fff;
 }
 
-/* CONTAINER */
-.container{
-  max-width:1160px;
-  margin:0 auto;
-  padding:0 18px;
-}
+/* ===== HERO CORE ===== */
 
-/* HERO */
 .hero{
   position:relative;
   min-height:100vh;
   overflow:hidden;
 }
 
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.35;
+}
+
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(11,19,36,.6),rgba(11,19,36,.95));
+  background:linear-gradient(
+    180deg,
+    rgba(11,19,36,.65),
+    rgba(11,19,36,.95)
+  );
 }
 
 .hero-inner{
   position:relative;
   min-height:100vh;
   display:flex;
-  align-items:center;
+  align-items:flex-start;
+  padding-top:96px;
+}
+
+.container{
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 18px;
+  width:100%;
 }
 
 .hero-content{
   max-width:760px;
 }
 
+/* ===== HERO TEXT ===== */
+
 .hero h1{
+  margin:0 0 18px;
   font-family:"Libre Franklin",sans-serif;
   font-weight:900;
-  font-size:clamp(48px,7vw,80px);
+  font-size:clamp(44px,7vw,80px);
   line-height:.95;
-  margin:0 0 18px;
   text-transform:lowercase;
 }
 
 .hero p{
-  font-size:22px;
   margin:0 0 28px;
+  font-size:22px;
   color:rgba(255,255,255,.9);
 }
 
-/* FORM */
+/* ===== HERO FORM ===== */
+
 .hero-form{
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.28);
@@ -85,7 +102,7 @@ body{
   backdrop-filter:blur(10px);
 }
 
-.form-grid{
+.hero-form-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
@@ -127,51 +144,18 @@ body{
   color:#fff;
 }
 
-.form-note{
+.hero-form-note{
   margin-top:8px;
   font-size:12px;
   color:rgba(255,255,255,.75);
   text-align:center;
 }
 
-/* CONTACT SECTION */
-.contact{
-  background:#fff;
-  color:#0b1324;
-  padding:72px 0;
-}
-
-.contact h2{
-  font-family:"Libre Franklin",sans-serif;
-  font-weight:900;
-  font-size:42px;
-  margin:0 0 18px;
-}
-
-.contact-form{
-  max-width:620px;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea{
-  background:#f4f6fb;
-  border:1px solid rgba(0,0,0,.15);
-  color:#0b1324;
-}
-
-.contact-form button{
-  background:#0b1324;
-  color:#fff;
-  border-color:#0b1324;
-}
-
-.contact-form button:hover{
-  background:#000;
-}
+/* ===== MOBILE ===== */
 
 @media(max-width:900px){
-  .form-grid{grid-template-columns:1fr}
+  .hero-form-grid{grid-template-columns:1fr}
+  .hero-inner{padding-top:72px}
   .hero p{font-size:18px}
 }
 </style>
@@ -180,72 +164,57 @@ body{
 <body>
 
 <section class="hero">
+
+  <!-- optional video -->
+  <!-- <video autoplay muted loop playsinline>
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video> -->
+
   <div class="hero-inner">
     <div class="container">
       <div class="hero-content">
 
-        <h1>office<br>cleaning</h1>
-        <p>High quality, bespoke cleaning services for professional environments</p>
+        <h1>specialist<br>care services</h1>
 
-        <form class="hero-form" action="mailto:info@thecarpetcleaningcrew.co.uk" method="post" enctype="text/plain">
-          <div class="form-grid">
-            <input type="text" name="organisation" placeholder="Organisation name" required>
-            <input type="text" name="contact" placeholder="Contact name" required>
-            <input type="email" name="email" placeholder="Email address" required>
-            <input type="tel" name="phone" placeholder="Phone number">
+        <p>
+          Professional support services for universities, care organisations,
+          and regulated institutional environments.
+        </p>
 
-            <select name="sector" required>
-              <option value="">Type of organisation</option>
-              <option>Office</option>
-              <option>Education</option>
-              <option>Healthcare</option>
-              <option>Local authority</option>
-              <option>Other</option>
-            </select>
+        <div class="hero-form">
+          <form onsubmit="return false">
 
-            <textarea name="message" rows="4" placeholder="Brief description of your requirements" required></textarea>
-          </div>
+            <div class="hero-form-grid">
+              <input type="text" placeholder="Organisation name" required>
+              <input type="text" placeholder="Contact name" required>
+              <input type="email" placeholder="Email address" required>
+              <input type="tel" placeholder="Phone number">
 
-          <button type="submit">Request a quote</button>
+              <select required>
+                <option value="" disabled selected>Type of organisation</option>
+                <option>University or college</option>
+                <option>Care provider</option>
+                <option>Local authority</option>
+                <option>Health or support services</option>
+                <option>Other institutional organisation</option>
+              </select>
 
-          <div class="form-note">
-            Commercial enquiries only
-          </div>
-        </form>
+              <textarea placeholder="Brief description of your requirements" required></textarea>
+            </div>
+
+            <button type="submit">Request information</button>
+
+            <div class="hero-form-note">
+              Institutional enquiries only. Not for domestic services.
+            </div>
+
+          </form>
+        </div>
 
       </div>
     </div>
   </div>
-</section>
 
-<section class="contact" id="contact">
-  <div class="container">
-
-    <h2>Get in touch</h2>
-
-    <form class="hero-form contact-form" action="mailto:info@thecarpetcleaningcrew.co.uk" method="post" enctype="text/plain">
-      <div class="form-grid">
-        <input type="text" name="organisation" placeholder="Organisation name" required>
-        <input type="text" name="contact" placeholder="Contact name" required>
-        <input type="email" name="email" placeholder="Email address" required>
-        <input type="tel" name="phone" placeholder="Phone number">
-
-        <select name="sector" required>
-          <option value="">Type of organisation</option>
-          <option>Office</option>
-          <option>Education</option>
-          <option>Healthcare</option>
-          <option>Local authority</option>
-          <option>Other</option>
-        </select>
-
-        <textarea name="message" rows="4" placeholder="Brief description of your requirements" required></textarea>
-      </div>
-
-      <button type="submit">Send enquiry</button>
-    </form>
-
-  </div>
 </section>
 
 </body>
