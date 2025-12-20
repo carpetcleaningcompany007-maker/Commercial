@@ -90,3 +90,38 @@ const yearEl = document.getElementById("year");
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
+// Stats counter
+const counters = document.querySelectorAll(".stat-num");
+
+const runCounter = (el) => {
+  const target = parseFloat(el.dataset.count);
+  let current = 0;
+  const step = Math.max(1, target / 60);
+
+  const tick = () => {
+    current += step;
+    if (current >= target) {
+      el.textContent = target;
+    } else {
+      el.textContent = Math.floor(current);
+      requestAnimationFrame(tick);
+    }
+  };
+  tick();
+};
+
+if (counters.length) {
+  const counterObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  counters.forEach(c => counterObserver.observe(c));
+}
