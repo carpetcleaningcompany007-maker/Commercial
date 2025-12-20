@@ -329,3 +329,87 @@ textarea {
 @media(max-width:500px){
   .trust-grid{grid-template-columns:1fr}
 }
+/* HERO FORM – INSTITUTIONAL */
+
+.hero-form{
+  margin-top:28px;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.28);
+  border-radius:22px;
+  padding:22px;
+  backdrop-filter: blur(12px);
+  max-width:620px;
+}
+
+.hero-form form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.hero-form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.hero-form input,
+.hero-form select,
+.hero-form textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.35);
+  background:rgba(10,16,32,0.55);
+  color:#fff;
+  font-size:14px;
+  font-family:"Lato", system-ui, sans-serif;
+}
+
+.hero-form textarea{
+  grid-column:1 / -1;
+  resize:none;
+  min-height:90px;
+}
+
+.hero-form select{
+  grid-column:1 / -1;
+  appearance:none;
+}
+
+.hero-form input::placeholder,
+.hero-form textarea::placeholder{
+  color:rgba(255,255,255,0.7);
+}
+
+.hero-form button{
+  margin-top:6px;
+  padding:14px;
+  border-radius:999px;
+  border:2px solid #fff;
+  background:#fff;
+  color:#0a1020;
+  font-weight:900;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+.hero-form button:hover{
+  background:transparent;
+  color:#fff;
+}
+
+.hero-form-note{
+  margin-top:6px;
+  font-size:12px;
+  color:rgba(255,255,255,0.75);
+  text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero-form-grid{
+    grid-template-columns:1fr;
+  }
+}
