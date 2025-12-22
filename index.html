@@ -1,288 +1,761 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>The Carpet Cleaning Company | Commercial Carpet Cleaning UK</title>
+  <title>The Carpet Cleaning Company | Commercial Carpet Cleaning</title>
+  <meta name="description" content="Commercial carpet cleaning for offices, hotels, venues and large sites. Fast drying options, deep clean systems, reliable service. Get a quote today." />
+  <meta name="keywords" content="commercial carpet cleaning, office carpet cleaning, hotel carpet cleaning, carpet maintenance, upholstery cleaning, stain removal, Shropshire, Herefordshire, Worcestershire" />
+  <meta name="author" content="The Carpet Cleaning Company" />
+  <meta name="theme-color" content="#0b1324" />
 
-<meta name="description" content="Professional commercial carpet cleaning across the UK using advanced FibreLife Technology. Offices, hotels, venues and large commercial sites.">
-<meta name="theme-color" content="#0b1324">
-<link rel="canonical" href="https://www.thecarpetcleaningcrew.co.uk/">
+  <meta property="og:title" content="The Carpet Cleaning Company | Commercial Carpet Cleaning" />
+  <meta property="og:description" content="Commercial carpet cleaning that protects your flooring, improves appearance and minimises disruption. Request a quote today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
 
-<style>
-:root{
-  --ink:#0b1324;
-  --ink-2:#111a33;
-  --accent:#4aa3ff;
-  --accent-2:#78c2ff;
-  --paper:#ffffff;
-  --mist:#f4f6fb;
-  --muted:#6f7696;
-}
+  <style>
+    :root{
+      --ink:#0b1324;
+      --ink2:#121b33;
+      --paper:#ffffff;
+      --mist:#f3f6ff;
+      --muted:#b8c1dd;
+      --line:rgba(255,255,255,.12);
+      --cardline:rgba(14,24,52,.10);
+      --accent:#78a82c;
+      --accent2:#4f7cff;
+      --good:#2ad1a3;
+      --shadow: 0 18px 50px rgba(7, 12, 28, .22);
+      --shadow2: 0 18px 40px rgba(9, 16, 35, .10);
+      --r:20px;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(79,124,255,.25), transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, rgba(120,168,44,.18), transparent 55%),
+        linear-gradient(180deg, #0b1324 0%, #0b1324 18%, #f7f9ff 18%, #f7f9ff 100%);
+    }
 
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,sans-serif;
-  background:var(--mist);
-  color:var(--ink);
-  line-height:1.6;
-}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1180px; margin:0 auto; padding:0 18px}
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:0 24px;
-}
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,19,36,.68);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
 
-header{
-  background:
-    radial-gradient(1200px 600px at 80% -20%, #1c2b5a, transparent),
-    linear-gradient(135deg, var(--ink), var(--ink-2));
-  color:white;
-  padding:110px 0 90px;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.2fr 0.8fr;
-  gap:60px;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:220px;
+    }
 
-h1{
-  font-size:clamp(2.4rem,4vw,3.2rem);
-  line-height:1.15;
-  margin-bottom:18px;
-}
+    .mark{
+      width:42px; height:42px;
+      border-radius:14px;
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.35), transparent 60%),
+        linear-gradient(135deg, rgba(79,124,255,1), rgba(120,168,44,1));
+      box-shadow: 0 10px 30px rgba(0,0,0,.28);
+    }
 
-.hero p{
-  font-size:1.15rem;
-  color:#d7defc;
-  max-width:620px;
-}
+    .brand h1{
+      font-size:14px;
+      line-height:1.1;
+      margin:0;
+      color:#fff;
+      letter-spacing:.2px;
+    }
 
-.hero-stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  margin-top:34px;
-}
+    .brand small{
+      display:block;
+      margin-top:3px;
+      color:rgba(255,255,255,.70);
+      font-size:12px;
+    }
 
-.stat{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:14px;
-  padding:20px;
-}
+    .links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
 
-.stat strong{
-  display:block;
-  font-size:1.4rem;
-}
+    .links a{
+      color:rgba(255,255,255,.78);
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:12px;
+    }
+    .links a:hover{background:rgba(255,255,255,.08); color:#fff}
 
-section{
-  padding:90px 0;
-  background:white;
-}
+    .cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
+      min-width:260px;
+    }
 
-.alt{background:var(--mist)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      font-size:13px;
+      font-weight:650;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color:#fff;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.12)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(79,124,255,1), rgba(120,168,44,1));
+      border:none;
+      box-shadow: 0 18px 40px rgba(0,0,0,.26);
+    }
+    .btn.primary:hover{filter:brightness(1.05)}
 
-h2{
-  font-size:2.1rem;
-  margin-bottom:18px;
-}
+    .hero{
+      padding:48px 0 26px;
+      color:#fff;
+    }
 
-.lead{
-  font-size:1.1rem;
-  color:#3b425c;
-  max-width:780px;
-  margin-bottom:50px;
-}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr; }
+      .cta{min-width:auto}
+      .brand{min-width:auto}
+    }
 
-.card{
-  background:white;
-  border-radius:18px;
-  padding:34px;
-  box-shadow:0 20px 50px rgba(0,0,0,.08);
-  border:1px solid #e7eaf6;
-}
+    .heroCard{
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border-radius: var(--r);
+      padding:22px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
 
-.card h3{
-  margin-bottom:10px;
-  font-size:1.25rem;
-}
+    .glow{
+      position:absolute;
+      inset:-60px -60px auto auto;
+      width:340px;
+      height:340px;
+      background: radial-gradient(circle at 30% 30%, rgba(79,124,255,.55), transparent 60%),
+                  radial-gradient(circle at 60% 60%, rgba(120,168,44,.35), transparent 55%);
+      filter: blur(18px);
+      opacity:.9;
+      pointer-events:none;
+    }
 
-.card p{color:#4b5170}
+    .badgeRow{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.10);
+      color:rgba(255,255,255,.88);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .dot{width:8px; height:8px; border-radius:99px; background: var(--good)}
 
-.tech{
-  background:
-    linear-gradient(135deg,#f7f9ff,#eef2ff);
-}
+    .heroTitle{
+      margin:14px 0 10px;
+      font-size:42px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 520px){
+      .heroTitle{font-size:34px}
+    }
 
-.tech-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-}
+    .heroText{
+      margin:0 0 16px;
+      color:rgba(255,255,255,.80);
+      font-size:15px;
+      line-height:1.6;
+      max-width:62ch;
+    }
 
-.tech ul{
-  margin-top:20px;
-  padding-left:18px;
-}
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
 
-.tech li{
-  margin-bottom:10px;
-  color:#4b5170;
-}
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+    @media (max-width: 520px){
+      .kpis{grid-template-columns:1fr}
+    }
 
-.form-wrap{
-  background:white;
-  border-radius:22px;
-  padding:40px;
-  box-shadow:0 25px 70px rgba(0,0,0,.12);
-  border:1px solid #e7eaf6;
-}
+    .kpi{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.10);
+      border-radius: 16px;
+      padding:12px 12px;
+    }
+    .kpi b{display:block; font-size:18px}
+    .kpi span{display:block; color:rgba(255,255,255,.72); font-size:12px; margin-top:4px}
 
-form{
-  display:grid;
-  gap:16px;
-}
+    .formCard{
+      border-radius: var(--r);
+      background: #fff;
+      color: var(--ink);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
 
-input, textarea{
-  width:100%;
-  padding:14px 16px;
-  font-size:1rem;
-  border-radius:10px;
-  border:1px solid #d8dcef;
-  font-family:inherit;
-}
+    .formTop{
+      padding:18px 18px 12px;
+      background:
+        radial-gradient(600px 220px at 20% 0%, rgba(79,124,255,.20), transparent 55%),
+        radial-gradient(600px 220px at 80% 0%, rgba(120,168,44,.16), transparent 55%),
+        linear-gradient(180deg, #ffffff, #f7f9ff);
+      border-bottom:1px solid rgba(15,30,70,.08);
+    }
 
-textarea{min-height:120px;resize:vertical}
+    .formTop h2{margin:0; font-size:16px}
+    .formTop p{margin:6px 0 0; color:rgba(11,19,36,.70); font-size:13px; line-height:1.5}
 
-button{
-  margin-top:10px;
-  padding:16px;
-  font-size:1rem;
-  font-weight:700;
-  color:#06142f;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
-  box-shadow:0 10px 30px rgba(74,163,255,.45);
-}
+    form{padding:14px 18px 18px; display:grid; gap:10px}
+    label{font-size:12px; color:rgba(11,19,36,.70)}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(11,19,36,.14);
+      background:#fff;
+      font-size:14px;
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{border-color: rgba(79,124,255,.65); box-shadow: 0 0 0 4px rgba(79,124,255,.12)}
+    textarea{min-height:92px; resize:vertical}
 
-.cta{
-  background:
-    radial-gradient(900px 500px at 10% -20%, #2b5bd7, transparent),
-    linear-gradient(135deg, var(--ink), var(--ink-2));
-  color:white;
-  padding:110px 0;
-}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    @media (max-width: 520px){ .row{grid-template-columns:1fr} }
 
-.cta p{color:#d7defc}
+    .formNote{
+      font-size:12px;
+      color:rgba(11,19,36,.62);
+      line-height:1.5;
+    }
 
-footer{
-  background:#070c1a;
-  color:#a9b0d8;
-  padding:50px 0;
-  font-size:.9rem;
-}
-</style>
+    .sendBtn{
+      width:100%;
+      padding:12px 14px;
+      border-radius:16px;
+      border:none;
+      cursor:pointer;
+      font-weight:750;
+      color:#fff;
+      background: linear-gradient(135deg, rgba(79,124,255,1), rgba(120,168,44,1));
+      box-shadow: var(--shadow2);
+    }
+    .sendBtn:hover{filter:brightness(1.03)}
+
+    .section{
+      padding:28px 0;
+      background: #f7f9ff;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){ .grid3{grid-template-columns:1fr} }
+
+    .card{
+      background:#fff;
+      border:1px solid rgba(11,19,36,.10);
+      border-radius: var(--r);
+      padding:16px;
+      box-shadow: var(--shadow2);
+    }
+
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color:rgba(11,19,36,.68); line-height:1.65; font-size:13px}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 980px){ .split{grid-template-columns:1fr} }
+
+    .list{
+      margin:10px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px;
+      border-radius: 16px;
+      border:1px solid rgba(11,19,36,.10);
+      background: rgba(243,246,255,.70);
+    }
+    .tick{
+      width:22px;
+      height:22px;
+      border-radius: 10px;
+      background: rgba(42,209,163,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      border: 1px solid rgba(42,209,163,.30);
+    }
+    .tick svg{width:14px;height:14px}
+
+    footer{
+      padding:24px 0;
+      background: #ffffff;
+      border-top:1px solid rgba(11,19,36,.08);
+    }
+
+    .foot{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+    @media (max-width: 980px){ .foot{grid-template-columns:1fr} }
+
+    .foot p{margin:6px 0 0; color:rgba(11,19,36,.70); font-size:13px; line-height:1.6}
+    .miniLinks{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .miniLinks a{
+      font-size:13px;
+      color:rgba(11,19,36,.76);
+      padding:8px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(11,19,36,.10);
+      background: rgba(243,246,255,.75);
+    }
+    .miniLinks a:hover{border-color: rgba(79,124,255,.40)}
+    .small{font-size:12px; color:rgba(11,19,36,.55)}
+
+    .anchor{scroll-margin-top:80px}
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      background:#0b1324;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding:10px 12px;
+      font-size:13px;
+      display:none;
+      box-shadow: var(--shadow);
+      z-index:2000;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Carpet Cleaning Company",
+    "description": "Commercial carpet cleaning for offices, hotels, venues and large sites",
+    "telephone": "07802563213",
+    "email": "carpetcleaningcompany007@gmail.com",
+    "areaServed": "United Kingdom",
+    "openingHours": ["Mo-Fr 08:00-18:00", "Sa 09:00-16:00"]
+  }
+  </script>
 </head>
 
 <body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <h1>The Carpet Cleaning Company</h1>
+            <small>Commercial carpet cleaning that protects your flooring</small>
+          </div>
+        </div>
 
-<header>
-  <div class="container hero-grid">
-    <div class="hero">
-      <h1>Commercial Carpet Cleaning<br>Done Properly</h1>
-      <p>
-        Specialist carpet cleaning for offices, hotels, venues and large commercial environments across the UK.
-      </p>
+        <nav class="links" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#sectors">Sectors</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <div class="hero-stats">
-        <div class="stat"><strong>Commercial</strong> Specialists</div>
-        <div class="stat"><strong>FibreLife</strong> Technology</div>
-        <div class="stat"><strong>Planned</strong> Maintenance</div>
+        <div class="cta">
+          <a class="btn" href="tel:07802563213">Call 07802 563213</a>
+          <a class="btn primary" href="#contact">Get a quote</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section>
-  <div class="container">
-    <h2>Built for Commercial Environments</h2>
-    <p class="lead">
-      We clean carpets in demanding, high-traffic environments where appearance, hygiene and durability matter.
-    </p>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="heroGrid">
+          <div class="heroCard">
+            <div class="glow" aria-hidden="true"></div>
 
-    <div class="grid">
-      <div class="card"><h3>Offices & Corporate</h3><p>Boardrooms, corridors and open-plan workspaces.</p></div>
-      <div class="card"><h3>Hotels & Venues</h3><p>Bedrooms, function rooms and public areas.</p></div>
-      <div class="card"><h3>Retail & Public Buildings</h3><p>Customer-facing environments cleaned safely.</p></div>
-      <div class="card"><h3>Maintenance Programmes</h3><p>Planned systems to extend carpet lifespan.</p></div>
+            <div class="badgeRow">
+              <div class="chip"><span class="dot"></span> Fast drying options</div>
+              <div class="chip">Out of hours available</div>
+              <div class="chip">Low disruption service</div>
+            </div>
+
+            <h2 class="heroTitle">Commercial carpet cleaning that looks premium and runs quietly in the background</h2>
+            <p class="heroText">
+              Offices, hotels, venues and multi site contracts. We deliver consistent results, clear reporting, and a finish your staff and visitors notice straight away.
+            </p>
+
+            <div class="heroActions">
+              <a class="btn primary" href="#contact">Request a quote</a>
+              <a class="btn" href="#process">See the process</a>
+            </div>
+
+            <div class="kpis">
+              <div class="kpi">
+                <b>Professional deep clean</b>
+                <span>Hot water extraction when needed, low moisture maintenance when preferred</span>
+              </div>
+              <div class="kpi">
+                <b>Contract ready</b>
+                <span>RAMS friendly approach, predictable scheduling, clear communication</span>
+              </div>
+              <div class="kpi">
+                <b>Better appearance</b>
+                <span>Improved presentation, reduced wear, longer asset life</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="formCard" id="contact">
+            <div class="formTop">
+              <h2>Get a commercial quote</h2>
+              <p>Send the basics and I will come back with a clear price and options.</p>
+            </div>
+
+            <form id="quoteForm">
+              <div class="row">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
+                </div>
+                <div>
+                  <label for="company">Company</label>
+                  <input id="company" name="company" autocomplete="organization" placeholder="Company name" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" inputmode="tel" placeholder="07802 563213" />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" inputmode="email" placeholder="carpetcleaningcompany007@gmail.com" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="site">Site type</label>
+                  <select id="site" name="site">
+                    <option>Office</option>
+                    <option>Hotel</option>
+                    <option>Venue</option>
+                    <option>Education</option>
+                    <option>Healthcare</option>
+                    <option>Retail</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="timing">Preferred timing</label>
+                  <select id="timing" name="timing">
+                    <option>Weekdays</option>
+                    <option>Evenings</option>
+                    <option>Weekends</option>
+                    <option>Out of hours only</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="message">What needs doing</label>
+                <textarea id="message" name="message" placeholder="Approx area, problem spots, access info, desired drying time"></textarea>
+              </div>
+
+              <button class="sendBtn" type="submit">Send enquiry</button>
+
+              <div class="formNote">
+                This form opens an email to carpetcleaningcompany007@gmail.com. If you prefer, call 07802 563213.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section anchor" id="services">
+      <div class="wrap">
+        <div class="grid3">
+          <div class="card">
+            <h3>Low moisture maintenance</h3>
+            <p>Ideal for busy buildings. Rapid drying, minimal disruption, consistent appearance across large areas.</p>
+          </div>
+          <div class="card">
+            <h3>Deep rinse and extraction</h3>
+            <p>When the carpet needs a proper reset. Targets embedded soil and residues and restores freshness.</p>
+          </div>
+          <div class="card">
+            <h3>Spot, stain, and spill response</h3>
+            <p>Call outs and planned visits. Keep problem areas under control so the site stays presentable.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>What you get</h3>
+            <ul class="list">
+              <li class="li">
+                <span class="tick" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <div>Clear plan and scheduling</div>
+                  <div class="small">Out of hours available and sensible access planning</div>
+                </div>
+              </li>
+              <li class="li">
+                <span class="tick" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <div>Consistent standards</div>
+                  <div class="small">Same system, same finish, site after site</div>
+                </div>
+              </li>
+              <li class="li">
+                <span class="tick" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <div>Better presentation</div>
+                  <div class="small">Cleaner walkways, improved first impressions</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card anchor" id="process">
+            <h3>How the process works</h3>
+            <p>
+              We choose the method based on the carpet type, soil level, drying requirements, and how the building is used.
+            </p>
+            <ul class="list">
+              <li class="li"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div>Survey and plan</div><div class="small">Access, timing, high traffic areas and risk points</div></div></li>
+              <li class="li"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div>Pre spray and agitation</div><div class="small">Lifts soil so it can be removed, not masked</div></div></li>
+              <li class="li"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div>Extraction or low moisture clean</div><div class="small">Chosen for the site to balance results and drying time</div></div></li>
+              <li class="li"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div>Walkthrough and handover</div><div class="small">Focus areas checked, advice given, next visit scheduled</div></div></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section anchor" id="sectors">
+      <div class="wrap">
+        <div class="grid3">
+          <div class="card">
+            <h3>Offices and corporate</h3>
+            <p>Quiet work, tidy setup, minimal disruption. Early mornings, evenings, and weekends available.</p>
+          </div>
+          <div class="card">
+            <h3>Hotels and venues</h3>
+            <p>High impact results for lobbies, corridors, function rooms and bedrooms with sensible turnaround times.</p>
+          </div>
+          <div class="card">
+            <h3>Education and public buildings</h3>
+            <p>Planned maintenance to protect flooring investment and keep standards consistent across term times.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section anchor" id="faq">
+      <div class="wrap">
+        <div class="split">
+          <div class="card">
+            <h3>FAQ</h3>
+            <p class="small">Quick answers that help buyers make a decision.</p>
+            <ul class="list">
+              <li class="li">
+                <span class="tick" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <div>How quickly will it dry</div>
+                  <div class="small">Low moisture options can dry fast. Deep extraction depends on conditions. We plan around your building.</div>
+                </div>
+              </li>
+              <li class="li">
+                <span class="tick" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <div>Can you work out of hours</div>
+                  <div class="small">Yes. Evenings and weekends are available so operations are not disrupted.</div>
+                </div>
+              </li>
+              <li class="li">
+                <span class="tick" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div>
+                  <div>Do you do contracts</div>
+                  <div class="small">Yes. Scheduled maintenance is the best way to keep carpets looking good and lasting longer.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Call or email</h3>
+            <p>Phone: <a href="tel:07802563213">07802 563213</a></p>
+            <p>Email: <a href="mailto:carpetcleaningcompany007@gmail.com">carpetcleaningcompany007@gmail.com</a></p>
+            <p class="small">With offices in Ludlow, Telford and Bromsgrove</p>
+
+            <div class="miniLinks">
+              <a href="#contact">Get a quote</a>
+              <a href="#services">Services</a>
+              <a href="#process">Process</a>
+              <a href="#sectors">Sectors</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div class="mark" aria-hidden="true" style="width:36px;height:36px;border-radius:14px;"></div>
+            <div>
+              <div style="color:var(--ink); font-weight:800;">The Carpet Cleaning Company</div>
+              <div class="small">Commercial carpet cleaning</div>
+            </div>
+          </div>
+          <p>With offices in Ludlow, Telford and Bromsgrove</p>
+          <p class="small">Copyright © <span id="y"></span> The Carpet Cleaning Company. All rights reserved.</p>
+        </div>
+
+        <div>
+          <p class="small">Contact</p>
+          <p><a href="tel:07802563213">07802 563213</a></p>
+          <p><a href="mailto:carpetcleaningcompany007@gmail.com">carpetcleaningcompany007@gmail.com</a></p>
+          <div class="miniLinks">
+            <a href="#contact">Quote</a>
+            <a href="#services">Services</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="tech">
-  <div class="container tech-grid">
-    <div>
-      <h2>FibreLife Technology</h2>
-      <p class="lead">
-        FibreLife is our advanced commercial carpet maintenance system designed to remove deep contamination
-        while protecting carpet fibres and reducing downtime.
-      </p>
+  <div class="toast" id="toast">Opening your email client</div>
 
-      <ul>
-        <li>Deep fibre agitation to release embedded dirt</li>
-        <li>Low-moisture options for rapid drying</li>
-        <li>Improves appearance without over-wetting</li>
-        <li>Extends carpet life and delays replacement</li>
-        <li>Ideal for high-traffic commercial areas</li>
-      </ul>
-    </div>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
 
-    <div class="form-wrap">
-      <h3>Request a Commercial Quote</h3>
-      <p style="margin-bottom:20px;color:#4b5170">
-        Tell us about your site and requirements.
-      </p>
+    const toast = document.getElementById("toast");
+    const form = document.getElementById("quoteForm");
 
-      <form action="https://formspree.io/f/REPLACE_THIS" method="POST">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Email address" required>
-        <input type="text" name="company" placeholder="Company / Site name">
-        <textarea name="message" placeholder="Tell us about your premises, size and frequency"></textarea>
-        <button type="submit">Request Quote</button>
-      </form>
-    </div>
-  </div>
-</section>
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
 
-<section class="cta">
-  <div class="container">
-    <h2>Commercial Carpet Cleaning Across the UK</h2>
-    <p>
-      Reliable, professional service designed for real commercial environments.
-    </p>
-  </div>
-</section>
+      const name = document.getElementById("name").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const site = document.getElementById("site").value;
+      const timing = document.getElementById("timing").value;
+      const message = document.getElementById("message").value.trim();
 
-<footer>
-  <div class="container">
-    <p>© The Carpet Cleaning Company</p>
-    <p>www.thecarpetcleaningcrew.co.uk</p>
-  </div>
-</footer>
+      const subject = encodeURIComponent("Commercial carpet cleaning quote request");
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Company: " + company + "\n" +
+        "Phone: " + phone + "\n" +
+        "Email: " + email + "\n" +
+        "Site type: " + site + "\n" +
+        "Preferred timing: " + timing + "\n\n" +
+        "Details:\n" + message + "\n"
+      );
 
+      toast.style.display = "block";
+      setTimeout(() => toast.style.display = "none", 1800);
+
+      window.location.href = "mailto:carpetcleaningcompany007@gmail.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
 </body>
 </html>
