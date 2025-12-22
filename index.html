@@ -121,6 +121,87 @@ h2{
 
 .card p{color:#4b5170}
 
+/* ===== SERVICES SECTION (ADDED) ===== */
+
+.services{
+  background:#f6f8fc;
+}
+
+.services-head{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.services-head span{
+  display:block;
+  color:#f5a623;
+  font-weight:700;
+  letter-spacing:.12em;
+  font-size:.8rem;
+  margin-bottom:12px;
+}
+
+.services-head h2{
+  font-size:2.6rem;
+  margin-bottom:12px;
+}
+
+.services-head p{
+  color:#5a6285;
+  max-width:720px;
+  margin:auto;
+  font-size:1.05rem;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+
+.service-card{
+  background:white;
+  border-radius:18px;
+  padding:34px;
+  box-shadow:0 15px 45px rgba(0,0,0,.06);
+  border:1px solid #e7ebfb;
+  transition:.25s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 25px 60px rgba(0,0,0,.1);
+}
+
+.service-icon{
+  width:52px;
+  height:52px;
+  border-radius:12px;
+  background:#0b1324;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+}
+
+.service-icon svg{
+  width:26px;
+  height:26px;
+  stroke:white;
+}
+
+.service-card h3{
+  margin-bottom:10px;
+  font-size:1.25rem;
+}
+
+.service-card p{
+  color:#4b5170;
+  font-size:.95rem;
+}
+
+/* ===== END SERVICES ===== */
+
 .tech{
   background:
     linear-gradient(135deg,#f7f9ff,#eef2ff);
@@ -263,6 +344,30 @@ footer{
       <div class="card"><h3>Hotels & Venues</h3><p>Bedrooms, function rooms and public areas.</p></div>
       <div class="card"><h3>Retail & Public Buildings</h3><p>Customer-facing environments cleaned safely.</p></div>
       <div class="card"><h3>Maintenance Programmes</h3><p>Planned systems to extend carpet lifespan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES SECTION INSERTED HERE ===== -->
+
+<section class="services">
+  <div class="container">
+    <div class="services-head">
+      <span>OUR SERVICES</span>
+      <h2>Expert Cleaning Solutions</h2>
+      <p>
+        From residential homes to commercial premises, we deliver outstanding results
+        with our comprehensive range of professional cleaning services.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card"><h3>Deep Carpet Cleaning</h3><p>Powerful extraction removes deep-set dirt and allergens.</p></div>
+      <div class="service-card"><h3>Upholstery Cleaning</h3><p>Gentle yet effective cleaning for sofas and seating.</p></div>
+      <div class="service-card"><h3>Stain Removal</h3><p>Specialist treatments for stubborn stains.</p></div>
+      <div class="service-card"><h3>Residential Cleaning</h3><p>Complete home carpet care tailored to your needs.</p></div>
+      <div class="service-card"><h3>Commercial Cleaning</h3><p>Professional cleaning for offices and venues.</p></div>
+      <div class="service-card"><h3>Carpet Protection</h3><p>Protective treatments to extend carpet lifespan.</p></div>
     </div>
   </div>
 </section>
