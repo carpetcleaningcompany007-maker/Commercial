@@ -155,22 +155,9 @@ body{
 }
 
 /* =========================
-   MOBILE
+   SERVICE TOGGLE
 ========================= */
 
-@media(max-width:900px){
-  .hero-form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-inner{
-    padding-top:72px;
-  }
-
-  .hero p{
-    font-size:18px;
-  }
-}
 .service-toggle{
   display:flex;
   gap:14px;
@@ -204,8 +191,14 @@ body{
   margin-top:6px;
   text-align:center;
 }
+
+/* =========================
+   SERVICES SECTION
+========================= */
+
 .services{
   background:#f6f8fc;
+  padding:120px 0;
 }
 
 .services-head{
@@ -225,6 +218,7 @@ body{
 .services-head h2{
   font-size:2.6rem;
   margin-bottom:12px;
+  color:#0b1324;
 }
 
 .services-head p{
@@ -234,16 +228,20 @@ body{
   font-size:1.05rem;
 }
 
+/* 🔒 LOCKED 3 + 3 GRID */
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
+  grid-template-columns:repeat(3, 1fr);
+  gap:32px;
 }
 
 .service-card{
   background:white;
   border-radius:18px;
   padding:34px;
+  min-height:240px;
+  display:flex;
+  flex-direction:column;
   box-shadow:0 15px 45px rgba(0,0,0,.06);
   border:1px solid #e7ebfb;
   transition:.25s ease;
@@ -274,9 +272,38 @@ body{
 .service-card h3{
   margin-bottom:10px;
   font-size:1.25rem;
+  color:#0b1324;
 }
 
 .service-card p{
   color:#4b5170;
   font-size:.95rem;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+@media(max-width:980px){
+  .services-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .hero-form-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:640px){
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-inner{
+    padding-top:72px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
 }
