@@ -16,7 +16,6 @@
   --ink-2:#111a33;
   --accent:#4aa3ff;
   --accent-2:#78c2ff;
-  --paper:#ffffff;
   --mist:#f4f6fb;
   --muted:#6f7696;
   --border:#e6ebf5;
@@ -36,6 +35,8 @@ body{
   margin:auto;
   padding:0 24px;
 }
+
+/* ================= HERO ================= */
 
 header{
   background:
@@ -82,6 +83,8 @@ h1{
   font-size:1.4rem;
 }
 
+/* ================= SECTIONS ================= */
+
 section{
   padding:90px 0;
   background:white;
@@ -99,9 +102,30 @@ h2{
   margin-bottom:50px;
 }
 
-/* =========================
-   SERVICES
-========================= */
+/* ================= BUILT FOR COMMERCIAL ================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:34px;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+  border:1px solid #e7eaf6;
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:1.25rem;
+}
+
+.card p{color:#4b5170}
+
+/* ================= SERVICES ================= */
 
 .services{
   background:#f6f8fc;
@@ -114,7 +138,7 @@ h2{
 
 .services-head span{
   display:block;
-  color:#4aa3ff;
+  color:var(--accent);
   font-weight:700;
   letter-spacing:.14em;
   font-size:.75rem;
@@ -148,14 +172,10 @@ h2{
     0 6px 20px rgba(15,35,90,.08),
     0 30px 70px rgba(15,35,90,.12);
   transition:.3s ease;
-  position:relative;
 }
 
 .service-card:hover{
   transform:translateY(-8px);
-  box-shadow:
-    0 15px 40px rgba(15,35,90,.16),
-    0 45px 90px rgba(15,35,90,.2);
 }
 
 .service-icon{
@@ -167,7 +187,6 @@ h2{
   align-items:center;
   justify-content:center;
   margin-bottom:26px;
-  box-shadow:0 10px 24px rgba(74,163,255,.25);
 }
 
 .service-icon svg{
@@ -179,18 +198,16 @@ h2{
 }
 
 .service-card h3{
-  font-size:1.2rem;
   margin-bottom:12px;
+  font-size:1.2rem;
 }
 
 .service-card p{
-  font-size:.95rem;
   color:var(--muted);
+  font-size:.95rem;
 }
 
-/* =========================
-   TECH + FORM
-========================= */
+/* ================= TECH + FORM ================= */
 
 .tech{
   background:linear-gradient(135deg,#f7f9ff,#eef2ff);
@@ -200,6 +217,16 @@ h2{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:60px;
+}
+
+.tech ul{
+  margin-top:20px;
+  padding-left:18px;
+}
+
+.tech li{
+  margin-bottom:10px;
+  color:#4b5170;
 }
 
 .form-wrap{
@@ -225,6 +252,30 @@ input, textarea{
 
 textarea{min-height:120px}
 
+.service-toggle{
+  display:flex;
+  gap:14px;
+}
+
+.service-toggle input{display:none}
+
+.service-toggle label{
+  flex:1;
+  padding:14px;
+  border-radius:12px;
+  border:2px solid #e3e7fb;
+  text-align:center;
+  cursor:pointer;
+  font-weight:600;
+  background:#fff;
+}
+
+.service-toggle input:checked + label{
+  border-color:#f5a623;
+  background:#fff6eb;
+  color:#c77900;
+}
+
 button{
   padding:16px;
   font-weight:700;
@@ -234,9 +285,23 @@ button{
   cursor:pointer;
 }
 
-/* =========================
-   FOOTER
-========================= */
+.form-note{
+  font-size:.85rem;
+  color:#6b7090;
+  text-align:center;
+}
+
+/* ================= CTA + FOOTER ================= */
+
+.cta{
+  background:
+    radial-gradient(900px 500px at 10% -20%, #2b5bd7, transparent),
+    linear-gradient(135deg, var(--ink), var(--ink-2));
+  color:white;
+  padding:110px 0;
+}
+
+.cta p{color:#d7defc}
 
 footer{
   background:#070c1a;
@@ -246,9 +311,9 @@ footer{
 }
 
 @media(max-width:1000px){
-  .services-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-grid{grid-template-columns:1fr}
+  .hero-grid,
   .tech-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:640px){
@@ -263,7 +328,7 @@ footer{
   <div class="container hero-grid">
     <div class="hero">
       <h1>Commercial Carpet Cleaning<br>Done Properly</h1>
-      <p>Specialist carpet cleaning for offices, hotels and venues across the UK.</p>
+      <p>Specialist carpet cleaning for offices, hotels, venues and large commercial environments across the UK.</p>
 
       <div class="hero-stats">
         <div class="stat"><strong>Commercial</strong> Specialists</div>
@@ -274,12 +339,26 @@ footer{
   </div>
 </header>
 
+<section>
+  <div class="container">
+    <h2>Built for Commercial Environments</h2>
+    <p class="lead">We clean carpets in demanding, high-traffic environments where appearance, hygiene and durability matter.</p>
+
+    <div class="grid">
+      <div class="card"><h3>Offices & Corporate</h3><p>Boardrooms and open-plan spaces.</p></div>
+      <div class="card"><h3>Hotels & Venues</h3><p>Bedrooms, corridors and function rooms.</p></div>
+      <div class="card"><h3>Retail & Public Buildings</h3><p>Customer-facing environments.</p></div>
+      <div class="card"><h3>Maintenance Programmes</h3><p>Planned systems to extend carpet life.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="services">
   <div class="container">
     <div class="services-head">
       <span>OUR SERVICES</span>
       <h2>Expert Cleaning Solutions</h2>
-      <p>From residential homes to commercial premises, we deliver outstanding results.</p>
+      <p>Professional cleaning services for residential and commercial environments.</p>
     </div>
 
     <div class="services-grid">
@@ -287,13 +366,13 @@ footer{
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M6 6v12m12-12v12"/></svg></div>
         <h3>Deep Carpet Cleaning</h3>
-        <p>Powerful extraction removes deep-set dirt and allergens.</p>
+        <p>Removes deep-set dirt and allergens.</p>
       </div>
 
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 11h16M6 11v6m12-6v6"/></svg></div>
         <h3>Upholstery Cleaning</h3>
-        <p>Safe and effective cleaning for sofas and seating.</p>
+        <p>Safe cleaning for sofas and seating.</p>
       </div>
 
       <div class="service-card">
@@ -305,22 +384,75 @@ footer{
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7M5 10v10h14V10"/></svg></div>
         <h3>Residential Cleaning</h3>
-        <p>Tailored carpet care for family homes.</p>
+        <p>Tailored carpet care for homes.</p>
       </div>
 
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 21V3h16v18M9 21v-6h6v6"/></svg></div>
         <h3>Commercial Cleaning</h3>
-        <p>Professional cleaning for offices and venues.</p>
+        <p>Professional service for offices.</p>
       </div>
 
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
         <h3>Carpet Protection</h3>
-        <p>Protective treatments that extend carpet life.</p>
+        <p>Protective treatments to extend life.</p>
       </div>
 
     </div>
+  </div>
+</section>
+
+<section class="tech">
+  <div class="container tech-grid">
+    <div>
+      <h2>FibreLife Technology</h2>
+      <p class="lead">Advanced commercial carpet maintenance designed for performance and longevity.</p>
+
+      <ul>
+        <li>Deep fibre agitation</li>
+        <li>Low-moisture options</li>
+        <li>Rapid drying</li>
+        <li>Extended carpet lifespan</li>
+      </ul>
+    </div>
+
+    <div class="form-wrap">
+      <h3>Request a Commercial Quote</h3>
+      <p style="color:#4b5170;margin-bottom:16px">We’ll get back to you within 24 hours.</p>
+
+      <form action="https://formspree.io/f/REPLACE_THIS" method="POST">
+
+        <div class="service-toggle">
+          <input type="radio" id="residential" name="service_type" value="Residential">
+          <label for="residential">Residential</label>
+
+          <input type="radio" id="commercial" name="service_type" value="Commercial" checked>
+          <label for="commercial">Commercial</label>
+        </div>
+
+        <input type="text" name="name" placeholder="Full name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="text" name="postcode" placeholder="Postcode" required>
+
+        <textarea name="message" placeholder="Tell us about your premises and requirements" required></textarea>
+
+        <button type="submit">Request Free Quote</button>
+
+        <div class="form-note">
+          By submitting this form, you agree to our Privacy Policy.
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Commercial Carpet Cleaning Across the UK</h2>
+    <p>Reliable, professional service designed for real commercial environments.</p>
   </div>
 </section>
 
