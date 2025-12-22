@@ -4,24 +4,99 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>The Carpet Cleaning Company | Services</title>
+<title>The Carpet Cleaning Company | Commercial Carpet Cleaning UK</title>
+
+<meta name="description" content="Professional commercial carpet cleaning across the UK using advanced FibreLife Technology. Offices, hotels, venues and large commercial sites.">
+<meta name="theme-color" content="#0b1324">
+<link rel="canonical" href="https://www.thecarpetcleaningcrew.co.uk/">
 
 <style>
 :root{
   --ink:#0b1324;
-  --bg:#f5f7fb;
-  --card:#ffffff;
-  --border:#e6ebf5;
-  --muted:#5b6488;
+  --ink-2:#111a33;
   --accent:#4aa3ff;
+  --accent-2:#78c2ff;
+  --paper:#ffffff;
+  --mist:#f4f6fb;
+  --muted:#6f7696;
+  --border:#e6ebf5;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,sans-serif;
-  background:var(--bg);
+  background:var(--mist);
   color:var(--ink);
+  line-height:1.6;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 24px;
+}
+
+header{
+  background:
+    radial-gradient(1200px 600px at 80% -20%, #1c2b5a, transparent),
+    linear-gradient(135deg, var(--ink), var(--ink-2));
+  color:white;
+  padding:110px 0 90px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:60px;
+}
+
+h1{
+  font-size:clamp(2.4rem,4vw,3.2rem);
+  line-height:1.15;
+  margin-bottom:18px;
+}
+
+.hero p{
+  font-size:1.15rem;
+  color:#d7defc;
+  max-width:620px;
+}
+
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:34px;
+}
+
+.stat{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  padding:20px;
+}
+
+.stat strong{
+  display:block;
+  font-size:1.4rem;
+}
+
+section{
+  padding:90px 0;
+  background:white;
+}
+
+h2{
+  font-size:2.1rem;
+  margin-bottom:18px;
+}
+
+.lead{
+  font-size:1.1rem;
+  color:#3b425c;
+  max-width:780px;
+  margin-bottom:50px;
 }
 
 /* =========================
@@ -29,13 +104,33 @@ body{
 ========================= */
 
 .services{
-  padding:120px 0;
+  background:#f6f8fc;
 }
 
-.container{
-  max-width:1240px;
+.services-head{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.services-head span{
+  display:block;
+  color:#4aa3ff;
+  font-weight:700;
+  letter-spacing:.14em;
+  font-size:.75rem;
+  margin-bottom:12px;
+}
+
+.services-head h2{
+  font-size:2.6rem;
+  margin-bottom:12px;
+}
+
+.services-head p{
+  color:#5a6285;
+  max-width:720px;
   margin:auto;
-  padding:0 24px;
+  font-size:1.05rem;
 }
 
 .services-grid{
@@ -45,35 +140,23 @@ body{
 }
 
 .service-card{
-  background:var(--card);
+  background:white;
   border-radius:24px;
   padding:44px 38px;
-  min-height:260px;
   border:1px solid var(--border);
   box-shadow:
-    0 2px 6px rgba(0,0,0,.03),
-    0 22px 50px rgba(15,35,90,.08);
+    0 6px 20px rgba(15,35,90,.08),
+    0 30px 70px rgba(15,35,90,.12);
   transition:.3s ease;
   position:relative;
-  overflow:hidden;
-}
-
-.service-card::after{
-  content:"";
-  position:absolute;
-  inset:auto -40% -60% -40%;
-  height:140px;
-  background:radial-gradient(circle, rgba(74,163,255,.15), transparent 70%);
 }
 
 .service-card:hover{
   transform:translateY(-8px);
   box-shadow:
-    0 10px 30px rgba(15,35,90,.15),
-    0 35px 80px rgba(15,35,90,.18);
+    0 15px 40px rgba(15,35,90,.16),
+    0 45px 90px rgba(15,35,90,.2);
 }
-
-/* ICON BADGE */
 
 .service-icon{
   width:56px;
@@ -95,8 +178,6 @@ body{
   stroke-width:2;
 }
 
-/* TEXT */
-
 .service-card h3{
   font-size:1.2rem;
   margin-bottom:12px;
@@ -104,16 +185,70 @@ body{
 
 .service-card p{
   font-size:.95rem;
-  line-height:1.6;
   color:var(--muted);
 }
 
 /* =========================
-   RESPONSIVE
+   TECH + FORM
 ========================= */
+
+.tech{
+  background:linear-gradient(135deg,#f7f9ff,#eef2ff);
+}
+
+.tech-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+.form-wrap{
+  background:white;
+  border-radius:22px;
+  padding:40px;
+  box-shadow:0 25px 70px rgba(0,0,0,.12);
+  border:1px solid #e7eaf6;
+}
+
+form{
+  display:grid;
+  gap:16px;
+}
+
+input, textarea{
+  width:100%;
+  padding:14px 16px;
+  font-size:1rem;
+  border-radius:10px;
+  border:1px solid #d8dcef;
+}
+
+textarea{min-height:120px}
+
+button{
+  padding:16px;
+  font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#070c1a;
+  color:#a9b0d8;
+  padding:50px 0;
+  font-size:.9rem;
+}
 
 @media(max-width:1000px){
   .services-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr}
+  .tech-grid{grid-template-columns:1fr}
 }
 
 @media(max-width:640px){
@@ -124,79 +259,77 @@ body{
 
 <body>
 
+<header>
+  <div class="container hero-grid">
+    <div class="hero">
+      <h1>Commercial Carpet Cleaning<br>Done Properly</h1>
+      <p>Specialist carpet cleaning for offices, hotels and venues across the UK.</p>
+
+      <div class="hero-stats">
+        <div class="stat"><strong>Commercial</strong> Specialists</div>
+        <div class="stat"><strong>FibreLife</strong> Technology</div>
+        <div class="stat"><strong>Planned</strong> Maintenance</div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <section class="services">
   <div class="container">
+    <div class="services-head">
+      <span>OUR SERVICES</span>
+      <h2>Expert Cleaning Solutions</h2>
+      <p>From residential homes to commercial premises, we deliver outstanding results.</p>
+    </div>
+
     <div class="services-grid">
 
-      <!-- Deep Carpet Cleaning -->
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M3 6h18M6 6v12m12-12v12M4 18h16"/>
-          </svg>
-        </div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M6 6v12m12-12v12"/></svg></div>
         <h3>Deep Carpet Cleaning</h3>
-        <p>Powerful extraction removes deep-set dirt, allergens and traffic-lane soiling.</p>
+        <p>Powerful extraction removes deep-set dirt and allergens.</p>
       </div>
 
-      <!-- Upholstery -->
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 11h16M6 11v6m12-6v6M5 17h14"/>
-          </svg>
-        </div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 11h16M6 11v6m12-6v6"/></svg></div>
         <h3>Upholstery Cleaning</h3>
-        <p>Safe, professional cleaning for sofas, chairs and soft furnishings.</p>
+        <p>Safe and effective cleaning for sofas and seating.</p>
       </div>
 
-      <!-- Stain Removal -->
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3v6m0 0a5 5 0 1 0 5 5"/>
-          </svg>
-        </div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3v6a5 5 0 1 0 5 5"/></svg></div>
         <h3>Stain Removal</h3>
-        <p>Specialist treatments designed to tackle stubborn and set-in stains.</p>
+        <p>Specialist treatments for stubborn stains.</p>
       </div>
 
-      <!-- Residential -->
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M3 10l9-7 9 7M5 10v10h14V10"/>
-          </svg>
-        </div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7M5 10v10h14V10"/></svg></div>
         <h3>Residential Cleaning</h3>
-        <p>Tailored carpet care for homes, families and lived-in spaces.</p>
+        <p>Tailored carpet care for family homes.</p>
       </div>
 
-      <!-- Commercial -->
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 21V3h16v18M9 21v-6h6v6"/>
-          </svg>
-        </div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 21V3h16v18M9 21v-6h6v6"/></svg></div>
         <h3>Commercial Cleaning</h3>
-        <p>Professional cleaning for offices, hotels, venues and public buildings.</p>
+        <p>Professional cleaning for offices and venues.</p>
       </div>
 
-      <!-- Protection -->
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>
-          </svg>
-        </div>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
         <h3>Carpet Protection</h3>
-        <p>Protective treatments that help extend carpet life and resist re-soiling.</p>
+        <p>Protective treatments that extend carpet life.</p>
       </div>
 
     </div>
   </div>
 </section>
+
+<footer>
+  <div class="container">
+    <p>© The Carpet Cleaning Company</p>
+    <p>www.thecarpetcleaningcrew.co.uk</p>
+  </div>
+</footer>
 
 </body>
 </html>
