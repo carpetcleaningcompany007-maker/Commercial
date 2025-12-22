@@ -8,6 +8,7 @@
 
 <meta name="description" content="Professional commercial carpet cleaning across the UK using advanced FibreLife Technology. Offices, hotels, venues and large commercial sites.">
 <meta name="theme-color" content="#0b1324">
+<link rel="canonical" href="https://www.thecarpetcleaningcrew.co.uk/">
 
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -105,10 +106,7 @@ body{
   position:relative;
   min-height:88vh;
   background:
-    linear-gradient(
-      rgba(11,31,54,.85),
-      rgba(11,31,54,.95)
-    ),
+    linear-gradient(rgba(11,31,54,.88),rgba(11,31,54,.95)),
     url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
   background-position:center;
@@ -191,7 +189,7 @@ body{
   text-decoration:none;
 }
 
-/* ================= PLACEHOLDER FOR YOUR EXISTING SECTIONS ================= */
+/* ================= GENERIC ================= */
 
 section{
   padding:90px 24px;
@@ -203,6 +201,104 @@ section{
   margin:auto;
 }
 
+h2{
+  font-size:2.2rem;
+  margin-bottom:18px;
+}
+
+.lead{
+  font-size:1.1rem;
+  color:#3b425c;
+  max-width:780px;
+  margin-bottom:50px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+  background:#f6f8fc;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.service-card{
+  background:#fff;
+  border-radius:18px;
+  padding:34px;
+  box-shadow:0 15px 45px rgba(0,0,0,.08);
+  border:1px solid #e7ebfb;
+}
+
+.service-card h3{
+  margin-bottom:10px;
+}
+
+.service-card p{
+  color:#4b5170;
+}
+
+/* ================= TECH ================= */
+
+.tech{
+  background:linear-gradient(135deg,#f7f9ff,#eef2ff);
+}
+
+.tech-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+.tech ul{
+  margin-top:20px;
+  padding-left:18px;
+}
+
+.tech li{
+  margin-bottom:10px;
+}
+
+/* ================= FORM ================= */
+
+.form-wrap{
+  background:#fff;
+  border-radius:22px;
+  padding:40px;
+  box-shadow:0 25px 70px rgba(0,0,0,.12);
+}
+
+form{
+  display:grid;
+  gap:16px;
+}
+
+input,textarea{
+  padding:14px 16px;
+  border-radius:10px;
+  border:1px solid #d8dcef;
+}
+
+button{
+  padding:16px;
+  font-weight:700;
+  background:var(--gold);
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));
+  color:#fff;
+  text-align:center;
+}
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -210,12 +306,11 @@ footer{
   color:#a9b0d8;
   padding:50px 24px;
   text-align:center;
-  font-size:.9rem;
 }
 
 @media(max-width:900px){
+  .services-grid,.tech-grid{grid-template-columns:1fr}
   .nav-links{display:none}
-  .hero-actions{flex-direction:column}
 }
 </style>
 </head>
@@ -233,7 +328,7 @@ footer{
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="#">Services</a>
-      <a href="#">About Us</a>
+      <a href="#">About</a>
       <a href="#">Reviews</a>
       <a href="#">Contact</a>
     </div>
@@ -250,7 +345,7 @@ footer{
   <div class="hero-inner">
 
     <div class="rating">
-      ★★★★★ <span>Rated 4.9/5 from 2,000+ Reviews</span>
+      ★★★★★ <span>5.0 Google Rating • 300+ Reviews</span>
     </div>
 
     <h1>
@@ -259,14 +354,14 @@ footer{
     </h1>
 
     <p>
-      Specialist commercial carpet cleaning using advanced equipment and eco-friendly solutions.
-      Trusted by offices, venues and businesses across the UK.
+      Commercial carpet cleaning for offices, venues and high-traffic environments
+      using professional equipment and proven systems.
     </p>
 
     <div class="hero-points">
-      <span>15+ Years Experience</span>
-      <span>100% Satisfaction Guaranteed</span>
-      <span>Eco-Friendly Products</span>
+      <span>Commercial Specialists</span>
+      <span>Five Star Rated</span>
+      <span>Eco-Friendly Methods</span>
     </div>
 
     <div class="hero-actions">
@@ -277,14 +372,54 @@ footer{
   </div>
 </div>
 
-<!-- YOUR EXISTING SECTIONS CONTINUE BELOW -->
-<section>
+<!-- SERVICES -->
+<section class="services">
+  <div class="container">
+    <h2>Expert Cleaning Solutions</h2>
+    <p class="lead">A full range of professional carpet and upholstery services.</p>
+
+    <div class="services-grid">
+      <div class="service-card"><h3>Deep Carpet Cleaning</h3><p>Removes embedded dirt and allergens.</p></div>
+      <div class="service-card"><h3>Upholstery Cleaning</h3><p>Safe cleaning for sofas and seating.</p></div>
+      <div class="service-card"><h3>Stain Removal</h3><p>Targeted treatments for problem areas.</p></div>
+      <div class="service-card"><h3>Residential Cleaning</h3><p>Tailored home carpet care.</p></div>
+      <div class="service-card"><h3>Commercial Cleaning</h3><p>Professional service for businesses.</p></div>
+      <div class="service-card"><h3>Carpet Protection</h3><p>Extend carpet lifespan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH + FORM -->
+<section class="tech">
+  <div class="container tech-grid">
+    <div>
+      <h2>FibreLife Technology</h2>
+      <ul>
+        <li>Deep fibre agitation</li>
+        <li>Low moisture drying</li>
+        <li>Improves appearance</li>
+        <li>Extends carpet life</li>
+      </ul>
+    </div>
+
+    <div class="form-wrap">
+      <h3>Request a Quote</h3>
+      <form action="#" method="post">
+        <input placeholder="Full Name" required>
+        <input placeholder="Email" required>
+        <input placeholder="Phone" required>
+        <textarea placeholder="Tell us about your premises"></textarea>
+        <button>Request Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
   <div class="container">
     <h2>Commercial Carpet Cleaning Across the UK</h2>
-    <p>
-      This hero now visually matches the reference site.
-      All your existing sections, services, forms and content can sit below this exactly as before.
-    </p>
+    <p>Reliable, professional, five-star rated service.</p>
   </div>
 </section>
 
