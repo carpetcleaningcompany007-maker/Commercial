@@ -1,0 +1,116 @@
+---
+layout: default
+---
+{% assign town_obj = site.data.towns | where: 'slug', page.town_slug | first %}
+{% assign service_obj = site.data.services | where: 'slug', page.service_slug | first %}
+{% assign service_name = page.service_name | default: service_obj.name %}
+<section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.68)),url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat">
+  <div class="container hero-grid-open">
+    <div>
+      <span class="eyebrow">{{ service_name }} in {{ town_obj.name }}</span>
+      <h1>{{ service_name }} in {{ town_obj.name }}</h1>
+      <p>{{ page.hero_text }}</p>
+      <p class="hero-secondary">Built for people searching specifically for {{ service_name | downcase }} in {{ town_obj.name }}, with a clear route to the right page and a fast local reply.</p>
+      <div class="hero-points hero-points-open">
+        <span>{{ service_name }}</span>
+        <span>{{ town_obj.name }}</span>
+        <span>Related services</span>
+        <span>Fast quote route</span>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+        <a class="btn secondary" href="{{ page.quote_path }}">Get a quote</a>
+      </div>
+    </div>
+    {% include quick-contact-card.html heading="Quick local contact" text="Call, email or WhatsApp us directly for a fast reply." %}
+  </div>
+</section>
+
+<section class="usp-band">
+  <div class="container usp-band-grid">
+    <div><strong>{{ service_name }}</strong><span>Clear local page built around {{ town_obj.name }} and nearby support.</span></div>
+    <div><strong>Fast quote route</strong><span>Move straight to a quote, call or WhatsApp without unnecessary steps.</span></div>
+    <div><strong>Internal SEO support</strong><span>Related services and nearby town links are built in below.</span></div>
+  </div>
+</section>
+
+<section class="local-story section-white service-flow">
+  <div class="container story-grid">
+    <div class="story-main">
+      <span class="section-kicker">{{ service_name }} in {{ town_obj.name }}</span>
+      <h2>{{ service_name }} for homes and local customers in {{ town_obj.name }}</h2>
+      <div class="story-copy paragraph-stack">
+        <p>{{ page.intro_paragraph_1 | default: page.intro_text }}</p>
+        <p>{{ page.intro_paragraph_2 | default: 'This page helps local customers find the exact service they need in the right town without getting lost in the wider site.' }}</p>
+        <p>{{ page.intro_paragraph_3 | default: 'It also connects this service page back into nearby areas and the wider site structure.' }}</p>
+      </div>
+    </div>
+    <aside class="story-side soft-panel">
+      <span class="section-kicker">Nearby supporting areas</span>
+      <h3>Areas around {{ town_obj.name }}</h3>
+      <div class="pill-links">
+        {% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section-alt flow-section">
+  <div class="container">
+    <div class="section-heading-wrap">
+      <span class="section-kicker">Related pages</span>
+      <h2>Other services in {{ town_obj.name }}</h2>
+    </div>
+    <div class="service-chip-grid cards">
+      {% for s in site.data.services %}
+        <a href="{{ page.locations_path }}{{ town_obj.slug }}/{{ s.slug }}.html"><strong>{{ s.name }} in {{ town_obj.name }}</strong><span>Go straight to the {{ s.name | downcase }} page for {{ town_obj.name }}.</span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-white flow-section pt-tight">
+  <div class="container narrow-wrap">
+    <span class="section-kicker">Nearby towns</span>
+    <h2>{{ service_name }} pages around {{ town_obj.name }}</h2>
+    <div class="service-chip-grid cards">
+      {% for t in site.data.towns limit:12 %}{% unless t.slug == town_obj.slug %}
+        <a href="{{ page.locations_path }}{{ t.slug }}/{{ page.service_slug }}.html"><strong>{{ service_name }} in {{ t.name }}</strong><span>View the same service page for {{ t.name }}.</span></a>
+      {% endunless %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-white flow-section pt-tight">
+  <div class="container narrow-wrap">
+    <span class="section-kicker">Quick questions</span>
+    <h2>{{ service_name }} in {{ town_obj.name }} FAQ</h2>
+    <div class="premium-process-grid">
+      <article class="premium-process-card"><h3>Do you cover nearby areas as well?</h3><p>Yes. This page is anchored to {{ town_obj.name }} but also supports nearby areas around the town.</p></article>
+      <article class="premium-process-card"><h3>Can I ask about another service too?</h3><p>Yes. Use the links above if you also need carpet cleaning, upholstery cleaning, stain removal or moth treatment in {{ town_obj.name }}.</p></article>
+      <article class="premium-process-card"><h3>How do I get in touch?</h3><p>Call directly, email us or send a WhatsApp message for a fast local reply.</p></article>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-alt local-map-section">
+  <div class="container split split-clean">
+    <div class="map-panel plain-panel">
+      <span class="section-kicker">Map around {{ town_obj.name }}</span>
+      <h2>Local map for {{ town_obj.name }}</h2>
+      <p>This page uses {{ town_obj.name }} as its local anchor point, helping customers move from the town page into the specific service they need while keeping the wider site structure connected.</p>
+      <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ town_obj.name | uri_escape }}%20UK&output=embed" loading="lazy"></iframe></div>
+      <p class="map-note">That helps support local searches for {{ service_name | downcase }} in {{ town_obj.name }} and surrounding areas.</p>
+    </div>
+    <div class="cta-panel plain-panel right-cta accent-block">
+      <span class="section-kicker">Need this service?</span>
+      <h2>Get a quote for {{ service_name | downcase }} in {{ town_obj.name }}</h2>
+      <p>If you are comparing options and want a fast answer about {{ service_name | downcase }} in {{ town_obj.name }}, call, email or send a WhatsApp message.</p>
+      <div class="actions">
+        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
+        <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>

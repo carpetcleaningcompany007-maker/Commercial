@@ -1,0 +1,14 @@
+Site check summary
+
+What I changed
+- Kept the homepage form only
+- Replaced the hardcoded homepage hero form in index.html with the reusable include: _includes/hero-quote-form.html
+- Confirmed internal pages use quick-contact-card include instead of a form include
+- Confirmed no live page files contain quote-section
+- Removed old report text files that were left in the project
+
+Verification
+- <aside class="formcard"> exists only in _includes/hero-quote-form.html
+- <form class="formgrid"> exists only in _includes/hero-quote-form.html
+- index.html includes hero-quote-form.html
+- No files contain quote-section

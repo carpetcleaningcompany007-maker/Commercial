@@ -1,0 +1,80 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+{% assign page_title = page.seo_title | default: nil %}
+{% if page_title == nil %}
+  {% if page.town and page.service_name %}{% assign page_title = page.service_name | append: ' ' | append: page.town | append: ' | ' | append: site.business_name %}
+  {% elsif page.town %}{% assign page_title = 'Carpet Cleaning ' | append: page.town | append: ' | ' | append: site.business_name %}
+  {% elsif page.title %}{% assign page_title = page.title | append: ' | ' | append: site.business_name %}
+  {% else %}{% assign page_title = site.business_name %}{% endif %}
+{% endif %}
+{% assign meta_description = page.description | default: nil %}
+{% if meta_description == nil %}
+  {% if page.town and page.service_name %}{% assign meta_description = page.service_name | append: ' in ' | append: page.town | append: ' from ' | append: site.business_name | append: '. Professional local service across ' | append: page.town | append: ' and nearby areas.' %}
+  {% elsif page.town %}{% assign meta_description = 'Professional carpet cleaning, upholstery cleaning, stain removal, rug cleaning and commercial carpet cleaning in ' | append: page.town | append: '.' %}
+  {% else %}{% assign meta_description = 'Professional carpet cleaning across ' | append: site.service_area | append: '.' %}{% endif %}
+{% endif %}
+{% assign canonical = page.url | absolute_url | replace: 'index.html', '' %}
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ meta_description }}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#0f172a">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ meta_description }}">
+<meta property="og:site_name" content="{{ site.business_name }}">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="{{ page.og_image | default: site.logo_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ meta_description }}">
+<meta name="twitter:image" content="{{ page.og_image | default: site.logo_url }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "{{ site.website }}/#business",
+      "name": "{{ site.business_name }}",
+      "url": "{{ site.website }}",
+      "telephone": "{{ site.phone }}",
+      "email": "{{ site.email }}",
+      "image": "{{ site.logo_url }}",
+      "priceRange": "££",
+      "areaServed": "{{ site.service_area }}"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ canonical }}#webpage",
+      "url": "{{ canonical }}",
+      "name": "{{ page_title }}",
+      "description": "{{ meta_description }}",
+      "isPartOf": {"@id": "{{ site.website }}/#website"}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.website }}/#website",
+      "url": "{{ site.website }}",
+      "name": "{{ site.business_name }}"
+    }
+    {% if page.town %}
+    ,{
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.website }}/"},
+        {"@type": "ListItem", "position": 2, "name": "Areas", "item": "{{ site.website }}/pages/areas.html"},
+        {"@type": "ListItem", "position": 3, "name": "{{ page.town }}", "item": "{{ site.website }}/areas/{{ page.slug | default: page.town_slug }}.html"}
+        {% if page.service_name %},
+        {"@type": "ListItem", "position": 4, "name": "{{ page.service_name }}", "item": "{{ site.website }}/locations/{{ page.town_slug }}/{{ page.service_slug }}.html"}
+        {% endif %}
+      ]
+    }
+    {% endif %}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="{% if page.root_path %}{{ page.root_path }}{% else %}{% if page.url contains '/areas/' or page.url contains '/pages/' %}../{% endif %}{% endif %}assets/style.css">
