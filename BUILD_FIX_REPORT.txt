@@ -1,0 +1,24 @@
+Build fix applied
+
+What was wrong:
+Eight top level pages started with malformed front matter:
+---
+---
+
+That makes Jekyll treat the file as front matter that never closes, which breaks GitHub Pages builds.
+
+Files fixed:
+- pages/carpet-cleaning.html
+- pages/commercial.html
+- pages/gallery.html
+- pages/moth-treatment.html
+- pages/reviews.html
+- pages/rug-cleaning.html
+- pages/stain-removal.html
+- pages/upholstery-cleaning.html
+
+What I changed:
+Removed the two opening lines (--- then ---) from each of those files so they are now plain HTML pages again.
+
+Check performed:
+All remaining files with front matter now parse correctly.

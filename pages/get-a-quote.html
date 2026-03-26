@@ -1,0 +1,36 @@
+---
+layout: default
+home_path: ../index.html
+pages_path: ./
+areas_path: ../areas/
+quote_path: get-a-quote.html
+root_path: ../
+title: Get a Quote | {{ site.business_name }}
+description: Request a fast carpet cleaning quote from {{ site.business_name }} across Worcestershire and the West Midlands.
+og_image: https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop
+---
+<section class="hero hero-simple" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.62)),url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;color:#fff">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Get a quote</span>
+      <h1>Tell us what needs cleaning</h1>
+      <p>Use the form below for a fast local quote for carpet cleaning, upholstery cleaning, stain removal, rug cleaning, moth treatment or commercial work.</p>
+      <div class="actions">
+        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+        <a class="btn secondary" href="mailto:{{ site.email }}">Email us</a>
+      </div>
+    </div>
+    <aside class="hero-side-note">
+      <span class="mini-kicker">Quick response</span>
+      <h2>Simple and straightforward</h2>
+      <p>Send over the basics and we can come back with the right advice and a proper local quote.</p>
+      <ul class="mini-checks">
+        <li><i class="fa-solid fa-circle-check"></i><span>Fast response by phone, email, or WhatsApp</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Domestic and commercial enquiries welcome</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>Formspree endpoint controlled in _config.yml</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+

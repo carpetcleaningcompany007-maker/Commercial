@@ -1,0 +1,5 @@
+Removed bottom quote-section blocks from these files:
+
+Files still containing the text 'quote-section' after edit:
+- CHECK_REPORT.txt
+- FORM_CHECK_REPORT.txt

@@ -1,0 +1,36 @@
+- slug: carpet-cleaning
+  name: Carpet Cleaning
+  short: professional carpet cleaning
+  hero: Truck mounted carpet cleaning for homes in {town} and surrounding areas
+  desc: Carpet cleaning for homes, rentals, stairs, bedrooms, lounges, hallways and
+    landings in {town}.
+  landing_path: pages/carpet-cleaning.html
+  page_intro: Professional carpet cleaning for lounges, bedrooms, stairs, hallways,
+    rentals and busy family homes.
+- slug: upholstery-cleaning
+  name: Upholstery Cleaning
+  short: professional upholstery cleaning
+  hero: Professional upholstery cleaning for sofas, chairs and fabric suites in {town}
+  desc: Upholstery cleaning for sofas, armchairs, dining chairs and fabric suites
+    in {town}.
+  landing_path: pages/upholstery-cleaning.html
+  page_intro: Professional sofa and upholstery cleaning for chairs, suites and everyday
+    household seating.
+- slug: stain-removal
+  name: Stain Removal
+  short: professional stain removal
+  hero: Targeted stain removal treatments in {town} for carpets and upholstery
+  desc: Targeted stain removal treatments in {town} where a standard clean is not
+    enough.
+  landing_path: pages/stain-removal.html
+  page_intro: Targeted stain removal treatment for carpets and upholstery when a standard
+    clean is not enough.
+- slug: moth-treatment
+  name: Moth Treatment
+  short: professional moth treatment
+  hero: Professional moth treatment advice and carpet protection in {town}
+  desc: Moth treatment and practical advice for carpets, rugs and vulnerable fibres
+    in {town}.
+  landing_path: pages/moth-treatment.html
+  page_intro: Practical moth treatment support and advice for carpets, rugs and vulnerable
+    fibres.
