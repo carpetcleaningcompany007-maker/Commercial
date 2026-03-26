@@ -1207,32 +1207,7 @@
           </div>
         </div>
 
-        <aside class="formcard" aria-label="Quote form">
-  <h2>Get your free quote</h2>
-  <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
-
-  <form class="formgrid" action="{{ site.formspree_endpoint }}" method="POST" novalidate data-formspree="true" data-service="General quote" data-area="" data-status="homeHeroFormStatus">
-    <input type="hidden" name="_subject" value="New {{ site.business_name }} enquiry">
-    <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
-    <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
-    <input type="email" name="email" placeholder="Email address" autocomplete="email">
-    <select name="service" required>
-      <option value="">Select service</option><option>Carpet cleaning</option><option>Upholstery cleaning</option><option>Rug cleaning</option><option>Stain removal treatment</option><option>Moth treatment</option><option>Commercial carpet cleaning</option><option selected>General quote</option>
-    </select>
-    <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
-    <button class="btn primary" type="submit">Send enquiry</button>
-  </form>
-
-  <div id="homeHeroFormStatus" class="form-status" aria-live="polite"></div>
-
-  <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
-
-  <div class="contact-mini">
-    <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-    <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
-    <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
-  </div>
-</aside>
+        {% include hero-quote-form.html service="General quote" status_id="homeHeroFormStatus" %}
       </div>
     </section>
 
