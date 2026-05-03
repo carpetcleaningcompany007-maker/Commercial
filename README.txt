@@ -2,8 +2,9 @@ Coffee at Margot's website
 
 Open index.html in a browser to view the site.
 
-The enquiry form is front-end only. Connect it to Formspree, email, or another booking system before publishing if enquiries should be sent automatically.
+This version is a premium single-page event hire website for a horsebox coffee and cake business near Ludlow. It uses the supplied chalkboard menu image as the temporary hero/menu photography.
 
-Assets:
-- assets/margots-menu.jpeg uses the supplied chalkboard menu image.
-- The horsebox and cake visuals are built into the page with SVG/CSS so they stay sharp on large screens and phones.
+Before publishing:
+- Replace the temporary menu-led hero with real horsebox/event photography when available.
+- Connect the quote form in index.html to Formspree or another email/form service.
+- Add the final phone number, email address, social links and any confirmed menu/pricing details.
